@@ -1,0 +1,3 @@
+rootProject.name='NiceDialog'
+include ':app'
+include ':nicedialog'
