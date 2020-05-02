@@ -1,5 +1,6 @@
 package dog.abcd.nicedialog.demo
 
+import android.annotation.SuppressLint
 import android.content.DialogInterface
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
@@ -17,6 +18,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         immersionBar {
@@ -44,26 +46,65 @@ class MainActivity : AppCompatActivity() {
 //                }.show(supportFragmentManager, "normal")
 //        }
         btnNormal.setOnClickListener {
-            AlertFactory(this).onNext {
-                Toast.makeText(this, it.toString(), Toast.LENGTH_SHORT).show()
-            }.create().bind { binding, dialog ->
-                binding.button1.text = "BUTTON1"
-            }.config {
-                backgroundDrawable = ColorDrawable(resources.getColor(R.color.colorPrimary))
-                gravity = Gravity.BOTTOM
-                animatorStyleRes = R.style.NiceDialog_Animation_SlideBottom
-            }.show(supportFragmentManager, "demo")
+            NiceDialog<DialogNiceBinding>(DialogNiceBinding.inflate(LayoutInflater.from(this)))
+                .config {
+                    width = WindowManager.LayoutParams.MATCH_PARENT
+                    height = WindowManager.LayoutParams.WRAP_CONTENT
+                    gravity = Gravity.BOTTOM
+                    backgroundDrawable = ColorDrawable(0x00000000)
+                    paddingTop = 0
+                    paddingBottom = 48
+                    paddingLeft = 48
+                    paddingRight = 48
+                    cancelable = true
+                    animatorStyleRes = R.style.NiceDialog_Animation_SlideBottom
+                }.bind { binding, dialog ->
+                    binding.tvMessage.text = "Nice Dialog!"
+                    binding.btnConfirm.text = "Cool!"
+                    binding.btnConfirm.setOnClickListener {
+                        dialog.dismiss()
+                    }
+                }.show(supportFragmentManager, "tag")
+
+
+//            AlertFactory(this).onNext {
+//                Toast.makeText(this, it.toString(), Toast.LENGTH_SHORT).show()
+//            }.create().bind { binding, dialog ->
+//                binding.button1.text = "BUTTON1"
+//            }.config {
+//                backgroundDrawable = ColorDrawable(resources.getColor(R.color.colorPrimary))
+//                gravity = Gravity.BOTTOM
+//                animatorStyleRes = R.style.NiceDialog_Animation_SlideBottom
+//            }.show(supportFragmentManager, "demo")
         }
 
+//        btnSimple.setOnClickListener {
+//        CircleDialogFactory(this).create().show(supportFragmentManager, "circle").onDismiss {
+//            btnNormal.callOnClick()
+//        }
+//            Handler().postDelayed(
+//                {
+//                    NiceDialog.dismiss("circle")
+//                }, 3000
+//            )
+//        }
+
         btnSimple.setOnClickListener {
-            CircleDialogFactory(this).create().show(supportFragmentManager, "circle").onDismiss {
-                btnNormal.callOnClick()
-            }
-            Handler().postDelayed(
-                {
-                    NiceDialog.dismiss("circle")
-                }, 3000
-            )
+            TestDialogFactory(this)
+                .onNext {
+                    Toast.makeText(this, it, Toast.LENGTH_LONG).show()
+                }
+                .onFinish {
+                    Toast.makeText(this, it, Toast.LENGTH_LONG).show()
+                }
+                .create()
+                .config {
+                    animatorStyleRes = R.style.NiceDialog_Animation_Zoom
+                }
+                .bind { binding, _ ->
+                    binding.tvMessage.text = "${binding.tvMessage.text}!!"
+                }
+                .show(supportFragmentManager, "tag")
         }
 
         btnDifficult.setOnClickListener {

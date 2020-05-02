@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.michaellee123:NiceDialog:1.0.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f8420b4a8fcee524b28465390277865a/jetified-NiceDialog-1.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f8420b4a8fcee524b28465390277865a/jetified-NiceDialog-1.0.0/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.michaellee123/NiceDialog/1.0.0/923ddfd205d5fc55512b8441d79759fe127b84e1/NiceDialog-1.0.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.michaellee123/NiceDialog/1.0.0/3005d8da2234fdeb7159aa002d96ab6924a7e694/NiceDialog-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

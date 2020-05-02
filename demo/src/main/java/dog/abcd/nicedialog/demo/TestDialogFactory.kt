@@ -16,17 +16,20 @@ class TestDialogFactory(context: Context) :
 
     override fun config(): NiceDialogConfig.() -> Unit = {
         width = WindowManager.LayoutParams.MATCH_PARENT
+        height = WindowManager.LayoutParams.WRAP_CONTENT
         gravity = Gravity.BOTTOM
     }
 
     override fun binder(): (DialogNiceBinding, NiceDialogFragment<DialogNiceBinding>) -> Unit =
         { binding, dialog ->
             binding.tvMessage.text = "Nice Factory!"
+            binding.btnConfirm.text = "Confirm"
+            binding.btnCancel.text = "Cancel"
             binding.btnConfirm.setOnClickListener {
                 dialog.dismiss()
                 next?.invoke("Next!")
             }
-            binding.tvMessage.setOnClickListener {
+            binding.btnCancel.setOnClickListener {
                 dialog.dismiss()
                 finish?.invoke("Finish!")
             }

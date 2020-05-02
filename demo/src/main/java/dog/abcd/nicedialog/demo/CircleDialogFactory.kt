@@ -21,7 +21,7 @@ class CircleDialogFactory(context: Context) :
     }
 
     override fun binder(): (DialogCircleBinding, NiceDialogFragment<DialogCircleBinding>) -> Unit =
-        { binding, dialog ->
+        { _, _ ->
         }
 
 }

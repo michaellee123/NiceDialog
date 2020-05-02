@@ -1,15 +1,15 @@
-# NiceDialog   [简体中文](README_zh.md)
+# NiceDialog
 A Very Nice Dialog For Android Developer.
 
-## Import
+## 导入
 
-If you can easy connet to JCenter, you can use this to import `NiceDialog` into your project.
+如果连JCenter比较快的话就用这个方法。
 
 ```gradle
 implementation 'dog.abcd:nicedialog:1.0.0'
 ```
 
-If not, you can also use this.
+或者就用下面这个方法，二选一即可。
 
 ```gradle
 repositories {
@@ -19,22 +19,22 @@ repositories {
 implementation 'com.github.michaellee123:NiceDialog:1.0.0'
 ```
 
-## Simple Usage
+## 简单使用
 
-First at all, you should make your project support databinding, add this to your project's gradle.
+首先需要你的项目支持DataBinding，在gradle文件中添加如下代码
 
  ```gradle
 android {
-    //something else...
+    //...
     dataBinding {
         enabled = true
     }
 }
  ```
  
- ## Create A Layout XML
+ ## 创建一个布局
  
- You just need make your all code included by `<layout></layout>`, like this.
+ 需要用`<layout></layout>`包裹整个布局。
  
  `dialog_nice.xml`
  
@@ -65,16 +65,14 @@ android {
 </layout>
  ```
  
- Then, databinding will auto create a class named `DialogNiceBinding`.
+ 现在DataBinding会自动创建一个类 `DialogNiceBinding`。
  
- ## Show A Dialog By NiceDialog
- 
- Simply call `NiceDialog` at the desired location.
+ ## 使用NiceDialog显示一个弹窗
  
 ```kotlin
 NiceDialog<DialogNiceBinding>(DialogNiceBinding.inflate(LayoutInflater.from(this)))
     .config {
-        //You can configure some parameters, but not all
+        //可以在这里配置一些属性，按需配置即可，不用写完。
         width = WindowManager.LayoutParams.MATCH_PARENT //default is MATCH_PARENT
         height = WindowManager.LayoutParams.WRAP_CONTENT //default is MATCH_PARENT
         gravity = Gravity.BOTTOM //this is default value
@@ -84,31 +82,31 @@ NiceDialog<DialogNiceBinding>(DialogNiceBinding.inflate(LayoutInflater.from(this
         paddingLeft = 48 //default is 0
         paddingRight = 48 //default is 0
         cancelable = true //this is default value
-        animatorStyleRes = R.style.NiceDialog_Animation_SlideBottom //default is 0, 0 is mean not use animate
+        animatorStyleRes = R.style.NiceDialog_Animation_SlideBottom //默认是0，0就没有动画
     }.bind { binding, dialog ->
-        //You can bind value or listener for views
+        //在这里绑数据或者是事件
         binding.tvMessage.text = "Nice Dialog!"
         binding.btnConfirm.text = "Cool!"
         binding.btnConfirm.setOnClickListener { 
-            //Close the dialog
+            //关闭弹窗
             dialog.dismiss()
         }
-    }.show(supportFragmentManager, "tag")//tag can be null, but I suggest be not null
+    }.show(supportFragmentManager, "tag")//tag可以为空，但是我建议最好赋值
 ```
 
-You can get a dialog like this now.
+简单的两步操作之后你就能看到一个这样的弹窗了。
 
 ![device-2020-05-02-201201.png](device-2020-05-02-201201.png)
 
-You can also use `tag` to dismiss dialog.
+你也可以使用 `tag` 来关闭弹窗。
 
 ```kotlin
 NiceDialog.dismiss("tag")
 ```
 
-## Code Encapsulation
+## 代码封装
 
-In a project, a dialog is usually reused many times, so I made `NiceDialogFactory` for you. For example.
+在项目中，一个弹窗通常会使用很多次，所以我也提供了`NiceDialogFactory`。举个例子。
 
 `dialog_circle.xml`
 
@@ -129,7 +127,7 @@ In a project, a dialog is usually reused many times, so I made `NiceDialogFactor
 </layout>
 ```
 
-Then we create a class based by `NiceDialogFactory`, like this.
+然后再创建一个类继承`NiceDialogFactory`。
 
 ```kotlin
 class CircleDialogFactory(context: Context) :
@@ -150,20 +148,18 @@ class CircleDialogFactory(context: Context) :
 }
 ```
 
-Simply call `CircleDialogFactory` at the desired location.
+调用。
 
 ```kotlin
 CircleDialogFactory(this).create().show(supportFragmentManager, "circle").onDismiss {
-    //You can do something when dialog on dismiss.
+    //可以添加关闭监听。
     Toast.makeText(this, "on dismiss", Toast.LENGTH_LONG).show()
 }
 ```
 
-## Complex
+## 复杂情况
 
-You can also do something very complicated.
-
-For example, you can do something in `NiceDialogFactory`, and you can also do something when you use `NiceDialogFactory`.
+比如说弹窗出来要做一个列表选择之类的，也可以很简单，在继承`NiceDialogFactory`做了一些操作之后，还能够继续在调用的时候对`NiceDialog`进行操作。
 
 ```kotlin
 class TestDialogFactory(context: Context) :
@@ -194,7 +190,7 @@ class TestDialogFactory(context: Context) :
 }
 ```
 
-Then, you can use `TestDialogFactory` like this.
+可以这样来用`TestDialogFactory`。
 
 ```kotlin
 TestDialogFactory(this)
@@ -214,6 +210,6 @@ TestDialogFactory(this)
     .show(supportFragmentManager, "tag")
 ```
 
-You can got a dialog like this.
+现在会得到这样一个弹窗。
 
 ![device-2020-05-02-203649.png](device-2020-05-02-203649.png)
