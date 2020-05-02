@@ -217,3 +217,18 @@ TestDialogFactory(this)
 You can got a dialog like this.
 
 ![device-2020-05-02-203649.png](device-2020-05-02-203649.png)
+
+## ImmersionBar
+
+If it is a full-screen dialog and you need to operate the status bar, ImmersionBar is recommended
+
+https://github.com/gyf-dev/ImmersionBar
+
+In `bind{}` you can do something like this.
+
+```kotlin
+dialog.immersionBar {
+    fitsSystemWindows(false)
+    statusBarDarkFont(true)
+}
+```

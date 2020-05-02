@@ -213,3 +213,20 @@ TestDialogFactory(this)
 现在会得到这样一个弹窗。
 
 ![device-2020-05-02-203649.png](device-2020-05-02-203649.png)
+
+## ImmersionBar
+
+如果是需要全屏dialog，并且需要操作状态栏属性的话，推荐使用ImmersionBar
+
+https://github.com/gyf-dev/ImmersionBar
+
+在`bind{}`的时候这样调用就行了。
+
+```kotlin
+dialog.immersionBar {
+    fitsSystemWindows(false)
+    statusBarDarkFont(true)
+}
+```
+
+注意，在调用完了之后，dismiss的时候需要改回activity或者fragment原本的样子。
