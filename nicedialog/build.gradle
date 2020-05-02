@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 29
@@ -10,7 +11,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
@@ -27,7 +28,6 @@ android {
         enabled = true
     }
 
-
 }
 
 dependencies {
@@ -38,4 +38,14 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}
+
+publish {
+    userOrg = 'antichristm'//Organizations名
+    repoName = 'android'//Repository名
+    groupId = 'dog.abcd'//包名（不要项目名）
+    artifactId = 'nicedialog'//项目名称
+    publishVersion = '1.0.0'//版本号
+    desc = 'A Very Nice Dialog For Android'//描述，不重要
+    website = 'https://github.com/michaellee123/NiceDialog'//网站
 }
