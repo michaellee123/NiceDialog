@@ -37,13 +37,13 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-//    implementation project(path: ':nicedialog')
+    implementation project(path: ':nicedialog')
     // 状态栏 ，基础依赖包，必须要依赖
     implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
     // fragment快速实现（可选）
     implementation 'com.gyf.immersionbar:immersionbar-components:3.0.0'
     // kotlin扩展（可选）
     implementation 'com.gyf.immersionbar:immersionbar-ktx:3.0.0'
-    implementation 'com.github.michaellee123:NiceDialog:1.0.0'
+//    implementation 'com.github.michaellee123:NiceDialog:1.0.0'
 
 }

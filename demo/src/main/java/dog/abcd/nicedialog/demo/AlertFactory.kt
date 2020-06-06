@@ -9,11 +9,7 @@ import dog.abcd.nicedialog.NiceDialogFactory
 import dog.abcd.nicedialog.NiceDialogFragment
 import dog.abcd.nicedialog.demo.databinding.DialogAlertBinding
 
-class AlertFactory(context: Context) : NiceDialogFactory<DialogAlertBinding, Int, Int>(
-    DialogAlertBinding.inflate(
-        LayoutInflater.from(context)
-    )
-) {
+class AlertFactory(context: Context) : NiceDialogFactory<DialogAlertBinding, Int, Int>(context) {
     override fun config(): NiceDialogConfig.() -> Unit = {
         width = WindowManager.LayoutParams.WRAP_CONTENT
         height = WindowManager.LayoutParams.WRAP_CONTENT

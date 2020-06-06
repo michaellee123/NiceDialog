@@ -10,9 +10,7 @@ import dog.abcd.nicedialog.NiceDialogFragment
 import dog.abcd.nicedialog.demo.databinding.DialogNiceBinding
 
 class TestDialogFactory(context: Context) :
-    NiceDialogFactory<DialogNiceBinding, String, String>(
-        DialogNiceBinding.inflate(LayoutInflater.from(context))
-    ) {
+    NiceDialogFactory<DialogNiceBinding, String, String>(context) {
 
     override fun config(): NiceDialogConfig.() -> Unit = {
         width = WindowManager.LayoutParams.MATCH_PARENT

@@ -6,7 +6,7 @@ A Very Nice Dialog For Android Developer.
 If you can easy connet to JCenter, you can use this to import `NiceDialog` into your project.
 
 ```gradle
-implementation 'dog.abcd:nicedialog:1.0.0'
+implementation 'dog.abcd:nicedialog:1.0.1'
 ```
 
 If not, you can also use this.
@@ -16,7 +16,7 @@ repositories {
     maven { url 'https://jitpack.io' }
 }
 //something else...
-implementation 'com.github.michaellee123:NiceDialog:1.0.0'
+implementation 'com.github.michaellee123:NiceDialog:1.0.1'
 ```
 
 ## Simple Usage
@@ -72,7 +72,7 @@ android {
  Simply call `NiceDialog` at the desired location.
  
 ```kotlin
-NiceDialog<DialogNiceBinding>(DialogNiceBinding.inflate(LayoutInflater.from(this)))
+NiceDialog(DialogNiceBinding.inflate(layoutInflater))
     .config {
         //You can configure some parameters, but not all
         width = WindowManager.LayoutParams.MATCH_PARENT //default is MATCH_PARENT
@@ -133,9 +133,7 @@ Then we create a class based by `NiceDialogFactory`, like this.
 
 ```kotlin
 class CircleDialogFactory(context: Context) :
-    NiceDialogFactory<DialogCircleBinding, Unit, Unit>(
-        DialogCircleBinding.inflate(LayoutInflater.from(context))
-    ) {
+    NiceDialogFactory<DialogCircleBinding, Unit, Unit>(context) {
     override fun config(): NiceDialogConfig.() -> Unit = {
         width = WindowManager.LayoutParams.WRAP_CONTENT
         height = WindowManager.LayoutParams.WRAP_CONTENT
@@ -167,9 +165,7 @@ For example, you can do something in `NiceDialogFactory`, and you can also do so
 
 ```kotlin
 class TestDialogFactory(context: Context) :
-    NiceDialogFactory<DialogNiceBinding, String, String>(
-        DialogNiceBinding.inflate(LayoutInflater.from(context))
-    ) {
+    NiceDialogFactory<DialogNiceBinding, String, String>(context) {
 
     override fun config(): NiceDialogConfig.() -> Unit = {
         width = WindowManager.LayoutParams.MATCH_PARENT

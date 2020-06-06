@@ -10,9 +10,7 @@ import dog.abcd.nicedialog.NiceDialogFragment
 import dog.abcd.nicedialog.demo.databinding.DialogCircleBinding
 
 class CircleDialogFactory(context: Context) :
-    NiceDialogFactory<DialogCircleBinding, Unit, Unit>(
-        DialogCircleBinding.inflate(LayoutInflater.from(context))
-    ) {
+    NiceDialogFactory<DialogCircleBinding, Unit, Unit>(context) {
     override fun config(): NiceDialogConfig.() -> Unit = {
         width = WindowManager.LayoutParams.WRAP_CONTENT
         height = WindowManager.LayoutParams.WRAP_CONTENT

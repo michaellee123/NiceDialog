@@ -1,18 +1,15 @@
 package dog.abcd.nicedialog.demo
 
 import android.annotation.SuppressLint
-import android.content.DialogInterface
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.WindowManager
 import android.widget.Toast
 import com.gyf.immersionbar.ktx.immersionBar
 import dog.abcd.nicedialog.NiceDialog
-import dog.abcd.nicedialog.demo.databinding.DialogAlertBinding
 import dog.abcd.nicedialog.demo.databinding.DialogNiceBinding
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -28,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         }
         setContentView(R.layout.activity_main)
 //        btnNormal.setOnClickListener {
-//            NiceDialog<DialogNiceBinding>(DialogNiceBinding.inflate(LayoutInflater.from(this)))
+//            NiceDialog<DialogNiceBinding>(this)
 //                .config {
 //                    width = WindowManager.LayoutParams.MATCH_PARENT
 //                    height = WindowManager.LayoutParams.WRAP_CONTENT
@@ -46,7 +43,7 @@ class MainActivity : AppCompatActivity() {
 //                }.show(supportFragmentManager, "normal")
 //        }
         btnNormal.setOnClickListener {
-            NiceDialog<DialogNiceBinding>(DialogNiceBinding.inflate(LayoutInflater.from(this)))
+            NiceDialog(DialogNiceBinding.inflate(layoutInflater))
                 .config {
                     width = WindowManager.LayoutParams.MATCH_PARENT
                     height = WindowManager.LayoutParams.WRAP_CONTENT
