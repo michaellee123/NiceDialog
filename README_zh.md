@@ -226,3 +226,11 @@ dialog.immersionBar {
 ```
 
 注意，在调用完了之后，dismiss的时候需要改回activity或者fragment原本的样子。
+
+## 混淆
+
+```
+-keep class * extends androidx.databinding.ViewDataBinding{
+    *;
+}
+```
