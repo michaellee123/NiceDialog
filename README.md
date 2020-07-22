@@ -228,3 +228,11 @@ dialog.immersionBar {
     statusBarDarkFont(true)
 }
 ```
+
+## Proguard
+
+```
+-keep class * extends androidx.databinding.ViewDataBinding{
+    *;
+}
+```
