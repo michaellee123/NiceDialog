@@ -6,7 +6,7 @@ A Very Nice Dialog For Android Developer.
 如果连JCenter比较快的话就用这个方法。
 
 ```gradle
-implementation 'dog.abcd:nicedialog:1.0.0'
+implementation 'dog.abcd:nicedialog:1.0.1'
 ```
 
 或者就用下面这个方法，二选一即可。
@@ -16,7 +16,7 @@ repositories {
     maven { url 'https://jitpack.io' }
 }
 //something else...
-implementation 'com.github.michaellee123:NiceDialog:1.0.0'
+implementation 'com.github.michaellee123:NiceDialog:1.0.1'
 ```
 
 ## 简单使用
@@ -70,7 +70,7 @@ android {
  ## 使用NiceDialog显示一个弹窗
  
 ```kotlin
-NiceDialog<DialogNiceBinding>(DialogNiceBinding.inflate(LayoutInflater.from(this)))
+NiceDialog(DialogNiceBinding.inflate(layoutInflater))
     .config {
         //可以在这里配置一些属性，按需配置即可，不用写完。
         width = WindowManager.LayoutParams.MATCH_PARENT //default is MATCH_PARENT
@@ -131,9 +131,7 @@ NiceDialog.dismiss("tag")
 
 ```kotlin
 class CircleDialogFactory(context: Context) :
-    NiceDialogFactory<DialogCircleBinding, Unit, Unit>(
-        DialogCircleBinding.inflate(LayoutInflater.from(context))
-    ) {
+    NiceDialogFactory<DialogCircleBinding, Unit, Unit>(context) {
     override fun config(): NiceDialogConfig.() -> Unit = {
         width = WindowManager.LayoutParams.WRAP_CONTENT
         height = WindowManager.LayoutParams.WRAP_CONTENT
@@ -163,9 +161,7 @@ CircleDialogFactory(this).create().show(supportFragmentManager, "circle").onDism
 
 ```kotlin
 class TestDialogFactory(context: Context) :
-    NiceDialogFactory<DialogNiceBinding, String, String>(
-        DialogNiceBinding.inflate(LayoutInflater.from(context))
-    ) {
+    NiceDialogFactory<DialogNiceBinding, String, String>(context) {
 
     override fun config(): NiceDialogConfig.() -> Unit = {
         width = WindowManager.LayoutParams.MATCH_PARENT
