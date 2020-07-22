@@ -316,14 +316,26 @@
     <option name="LAST_COMMIT_MESSAGE" value="完善readme" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="379" y="127" key="CommitChangelistDialog2" timestamp="1595382571925">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="379" y="127" key="CommitChangelistDialog2/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1595382571925" />
+    <state x="550" y="248" key="MultipleFileMergeDialog" timestamp="1595382592402">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="550" y="248" key="MultipleFileMergeDialog/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1595382592402" />
     <state x="341" y="164" key="SettingsEditor" timestamp="1595322392386">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="341" y="164" key="SettingsEditor/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1595322392386" />
-    <state x="496" y="323" key="git4idea.merge.GitPullDialog" timestamp="1595382541565">
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1595382617867">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="496" y="323" key="git4idea.merge.GitPullDialog/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1595382541565" />
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1595382617867" />
+    <state x="496" y="323" key="git4idea.merge.GitPullDialog" timestamp="1595382658737">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="496" y="323" key="git4idea.merge.GitPullDialog/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1595382658737" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
