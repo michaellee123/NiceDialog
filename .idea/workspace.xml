@@ -10,19 +10,8 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cf6a009-5981-4514-a3e0-91dfd19df9e9" name="Default Changelist" comment="init">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_gyf_immersionbar_immersionbar_3_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_gyf_immersionbar_immersionbar_3_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_gyf_immersionbar_immersionbar_components_3_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_gyf_immersionbar_immersionbar_components_3_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_gyf_immersionbar_immersionbar_ktx_3_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_gyf_immersionbar_immersionbar_ktx_3_0_0_aar.xml" afterDir="false" />
+    <list default="true" id="1cf6a009-5981-4514-a3e0-91dfd19df9e9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NiceDialog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/NiceDialog.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nicedialog/nicedialog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/nicedialog/nicedialog.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -279,7 +268,21 @@
       <option name="project" value="LOCAL" />
       <updated>1588424101550</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="merge">
+      <created>1595382572155</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1595382572155</updated>
+    </task>
+    <task id="LOCAL-00007" summary="merge">
+      <created>1595382729001</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1595382729001</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -313,13 +316,14 @@
     <MESSAGE value="1、Demo&#10;2、jcenter配置" />
     <MESSAGE value="jitpack.io配置" />
     <MESSAGE value="完善readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="完善readme" />
+    <MESSAGE value="merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="merge" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="379" y="127" key="CommitChangelistDialog2" timestamp="1595382571925">
+    <state x="379" y="127" key="CommitChangelistDialog2" timestamp="1595382728829">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="379" y="127" key="CommitChangelistDialog2/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1595382571925" />
+    <state x="379" y="127" key="CommitChangelistDialog2/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1595382728829" />
     <state x="550" y="248" key="MultipleFileMergeDialog" timestamp="1595382592402">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -328,21 +332,25 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="341" y="164" key="SettingsEditor/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1595322392386" />
-    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1595382617867">
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1595382832211">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="440" y="265" key="Vcs.Push.Dialog.v2/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1595382617867" />
-    <state x="496" y="323" key="git4idea.merge.GitPullDialog" timestamp="1595382658737">
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1595382832211" />
+    <state x="587" y="323" key="git4idea.merge.GitMergeDialog" timestamp="1595382894429">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="496" y="323" key="git4idea.merge.GitPullDialog/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1595382658737" />
+    <state x="587" y="323" key="git4idea.merge.GitMergeDialog/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1595382894429" />
+    <state x="496" y="323" key="git4idea.merge.GitPullDialog" timestamp="1595382860144">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="496" y="323" key="git4idea.merge.GitPullDialog/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1595382860144" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/demo/src/main/java/dog/abcd/nicedialog/demo/MainActivity.kt</url>
-          <line>82</line>
+          <line>79</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
