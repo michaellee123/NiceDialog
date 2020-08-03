@@ -18,17 +18,17 @@ class TestDialogFactory(context: Context) :
         gravity = Gravity.BOTTOM
     }
 
-    override fun binder(): (DialogNiceBinding, NiceDialogFragment<DialogNiceBinding>) -> Unit =
-        { binding, dialog ->
+    override fun binder(): NiceDialogFragment<DialogNiceBinding>.() -> Unit =
+        {
             binding.tvMessage.text = "Nice Factory!"
             binding.btnConfirm.text = "Confirm"
             binding.btnCancel.text = "Cancel"
             binding.btnConfirm.setOnClickListener {
-                dialog.dismiss()
+                dismiss()
                 next?.invoke("Next!")
             }
             binding.btnCancel.setOnClickListener {
-                dialog.dismiss()
+                dismiss()
                 finish?.invoke("Finish!")
             }
         }

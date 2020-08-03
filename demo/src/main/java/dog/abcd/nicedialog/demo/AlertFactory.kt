@@ -17,19 +17,22 @@ class AlertFactory(context: Context) : NiceDialogFactory<DialogAlertBinding, Int
         animatorStyleRes = R.style.NiceDialog_Animation_Rotate
     }
 
-    override fun binder(): (DialogAlertBinding, NiceDialogFragment<DialogAlertBinding>) -> Unit =
-        { binding, dialog ->
+    override fun binder(): (NiceDialogFragment<DialogAlertBinding>.() -> Unit) =
+        {
             binding.button1.text = "1"
             binding.button2.text = "2"
             binding.button1.setOnClickListener {
-                dialog.dismiss()
+                pd()
                 next?.invoke(1)
             }
             binding.button2.setOnClickListener {
-                dialog.dismiss()
+                dismiss()
                 next?.invoke(2)
             }
         }
 
-    //adapter
+    fun pd(){
+        dialog.dismiss()
+    }
+
 }

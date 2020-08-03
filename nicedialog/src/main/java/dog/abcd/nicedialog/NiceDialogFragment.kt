@@ -11,13 +11,13 @@ import androidx.fragment.app.FragmentManager
 
 class NiceDialogFragment<T : ViewDataBinding> : DialogFragment() {
 
-    private lateinit var binding: T
+    lateinit var binding: T
 
     private lateinit var niceDialogConfig: NiceDialogConfig
 
     private var dismissListener: (() -> Unit)? = null
 
-    private var binder: ((T, NiceDialogFragment<T>) -> Unit)? = null
+    private var binder: (NiceDialogFragment<T>.() -> Unit)? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,7 +44,7 @@ class NiceDialogFragment<T : ViewDataBinding> : DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binder?.let {
-            it(binding, this)
+            it(this)
         }
     }
 
@@ -53,7 +53,7 @@ class NiceDialogFragment<T : ViewDataBinding> : DialogFragment() {
         tag: String?,
         binding: T,
         niceDialogConfig: NiceDialogConfig,
-        binder: ((binding: T, dialog: NiceDialogFragment<T>) -> Unit)?
+        binder: (NiceDialogFragment<T>.() -> Unit)?
     ) {
         this.binding = binding
         this.niceDialogConfig = niceDialogConfig

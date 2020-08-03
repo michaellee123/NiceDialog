@@ -26,15 +26,15 @@ class NiceDialog<T : ViewDataBinding>(private val binding: T) {
         /**
          * 在NiceDialogFragment被调用dismiss之后会移除这个弹窗，正常情况下请不要调用
          */
-        fun removeDialog(tag: String) {
+        fun removeDialog(tag: String): NiceDialogFragment<*>? {
             Log.i(TAG, "remove dialog:$tag")
-            dialogs.remove(tag)
+            return dialogs.remove(tag)
         }
     }
 
     private val niceDialogConfig = NiceDialogConfig()
 
-    private var binder: ((T, NiceDialogFragment<T>) -> Unit)? = null
+    private var binder: (NiceDialogFragment<T>.() -> Unit)? = null
 
     /**
      * 弹窗配置，可以多次设置，属性以最后一次设置的为准
@@ -47,13 +47,13 @@ class NiceDialog<T : ViewDataBinding>(private val binding: T) {
     /**
      * 绑定数据，可以多次操作，最后的操作会覆盖之前的操作
      */
-    fun bind(binder: (binding: T, dialog: NiceDialogFragment<T>) -> Unit): NiceDialog<T> {
+    fun bind(binder: NiceDialogFragment<T>.() -> Unit): NiceDialog<T> {
         val old = this.binder
-        this.binder = { binding, dialog ->
-            old?.let {
-                it(binding, dialog)
+        this.binder = {
+            old?.let { o ->
+                o(this)
             }
-            binder(binding, dialog)
+            binder(this)
         }
         return this
     }
@@ -62,11 +62,10 @@ class NiceDialog<T : ViewDataBinding>(private val binding: T) {
      * 显示，如果需要主动触发关闭，可以选择在这里获取到并保存对象，用于操作
      */
     fun show(manager: FragmentManager, tag: String?): NiceDialogFragment<T> {
+        tag?.let { dismiss(it) }
         val dialogFragment = NiceDialogFragment<T>()
         dialogFragment.show(manager, tag, binding, niceDialogConfig, binder)
-        tag?.let {
-            dialogs.put(it, dialogFragment)
-        }
+        tag?.let { dialogs.put(it, dialogFragment) }
         return dialogFragment
     }
 }

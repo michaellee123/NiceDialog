@@ -3,20 +3,10 @@ A Very Nice Dialog For Android Developer.
 
 ## Import
 
-If you can easy connet to JCenter, you can use this to import `NiceDialog` into your project.
+You can use this to import `NiceDialog` into your project.
 
 ```gradle
-implementation 'dog.abcd:nicedialog:1.0.1'
-```
-
-If not, you can also use this.
-
-```gradle
-repositories {
-    maven { url 'https://jitpack.io' }
-}
-//something else...
-implementation 'com.github.michaellee123:NiceDialog:1.0.1'
+implementation 'dog.abcd:nicedialog:1.0.2'
 ```
 
 ## Simple Usage
@@ -85,15 +75,15 @@ NiceDialog(DialogNiceBinding.inflate(layoutInflater))
         paddingRight = 48 //default is 0
         cancelable = true //this is default value
         animatorStyleRes = R.style.NiceDialog_Animation_SlideBottom //default is 0, 0 is mean not use animate
-    }.bind { binding, dialog ->
+    }.bind {
         //You can bind value or listener for views
         binding.tvMessage.text = "Nice Dialog!"
         binding.btnConfirm.text = "Cool!"
         binding.btnConfirm.setOnClickListener { 
             //Close the dialog
-            dialog.dismiss()
+            dismiss()
         }
-    }.show(supportFragmentManager, "tag")//tag can be null, but I suggest be not null
+    }.show(supportFragmentManager, "tag")//show a new dialog will dismiss old dialog that same tag, if it not be null
 ```
 
 You can get a dialog like this now.
@@ -141,8 +131,8 @@ class CircleDialogFactory(context: Context) :
         cancelable = false
     }
 
-    override fun binder(): (DialogCircleBinding, NiceDialogFragment<DialogCircleBinding>) -> Unit =
-        { _, _ ->
+    override fun binder(): NiceDialogFragment<DialogCircleBinding>.() -> Unit =
+        {
         }
 
 }
@@ -173,17 +163,17 @@ class TestDialogFactory(context: Context) :
         gravity = Gravity.BOTTOM
     }
 
-    override fun binder(): (DialogNiceBinding, NiceDialogFragment<DialogNiceBinding>) -> Unit =
-        { binding, dialog ->
+    override fun binder(): NiceDialogFragment<DialogNiceBinding>.() -> Unit =
+        {
             binding.tvMessage.text = "Nice Factory!"
             binding.btnConfirm.text = "Confirm"
             binding.btnCancel.text = "Cancel"
             binding.btnConfirm.setOnClickListener {
-                dialog.dismiss()
+                dismiss()
                 next?.invoke("Next!")
             }
             binding.btnCancel.setOnClickListener {
-                dialog.dismiss()
+                dismiss()
                 finish?.invoke("Finish!")
             }
         }
@@ -204,7 +194,7 @@ TestDialogFactory(this)
     .config {
         animatorStyleRes = R.style.NiceDialog_Animation_Zoom
     }
-    .bind { binding, _ ->
+    .bind {
         binding.tvMessage.text = "${binding.tvMessage.text}!!"
     }
     .show(supportFragmentManager, "tag")
@@ -223,7 +213,7 @@ https://github.com/gyf-dev/ImmersionBar
 In `bind{}` you can do something like this.
 
 ```kotlin
-dialog.immersionBar {
+immersionBar {
     fitsSystemWindows(false)
     statusBarDarkFont(true)
 }

@@ -6,7 +6,7 @@ A Very Nice Dialog For Android Developer.
 如果连JCenter比较快的话就用这个方法。
 
 ```gradle
-implementation 'dog.abcd:nicedialog:1.0.1'
+implementation 'dog.abcd:nicedialog:1.0.2'
 ```
 
 或者就用下面这个方法，二选一即可。
@@ -16,7 +16,7 @@ repositories {
     maven { url 'https://jitpack.io' }
 }
 //something else...
-implementation 'com.github.michaellee123:NiceDialog:1.0.1'
+implementation 'com.github.michaellee123:NiceDialog:1.0.2'
 ```
 
 ## 简单使用
@@ -83,15 +83,15 @@ NiceDialog(DialogNiceBinding.inflate(layoutInflater))
         paddingRight = 48 //default is 0
         cancelable = true //this is default value
         animatorStyleRes = R.style.NiceDialog_Animation_SlideBottom //默认是0，0就没有动画
-    }.bind { binding, dialog ->
+    }.bind {
         //在这里绑数据或者是事件
         binding.tvMessage.text = "Nice Dialog!"
         binding.btnConfirm.text = "Cool!"
         binding.btnConfirm.setOnClickListener { 
             //关闭弹窗
-            dialog.dismiss()
+            dismiss()
         }
-    }.show(supportFragmentManager, "tag")//tag可以为空，但是我建议最好赋值
+    }.show(supportFragmentManager, "tag")//如果tag不为空，显示新的dialog会关闭相同tag的旧的dialog
 ```
 
 简单的两步操作之后你就能看到一个这样的弹窗了。
@@ -139,8 +139,8 @@ class CircleDialogFactory(context: Context) :
         cancelable = false
     }
 
-    override fun binder(): (DialogCircleBinding, NiceDialogFragment<DialogCircleBinding>) -> Unit =
-        { _, _ ->
+    override fun binder(): NiceDialogFragment<DialogCircleBinding>.() -> Unit =
+        {
         }
 
 }
@@ -169,17 +169,17 @@ class TestDialogFactory(context: Context) :
         gravity = Gravity.BOTTOM
     }
 
-    override fun binder(): (DialogNiceBinding, NiceDialogFragment<DialogNiceBinding>) -> Unit =
-        { binding, dialog ->
+    override fun binder(): NiceDialogFragment<DialogNiceBinding>.() -> Unit =
+        {
             binding.tvMessage.text = "Nice Factory!"
             binding.btnConfirm.text = "Confirm"
             binding.btnCancel.text = "Cancel"
             binding.btnConfirm.setOnClickListener {
-                dialog.dismiss()
+                dismiss()
                 next?.invoke("Next!")
             }
             binding.btnCancel.setOnClickListener {
-                dialog.dismiss()
+                dismiss()
                 finish?.invoke("Finish!")
             }
         }
@@ -200,7 +200,7 @@ TestDialogFactory(this)
     .config {
         animatorStyleRes = R.style.NiceDialog_Animation_Zoom
     }
-    .bind { binding, _ ->
+    .bind {
         binding.tvMessage.text = "${binding.tvMessage.text}!!"
     }
     .show(supportFragmentManager, "tag")
@@ -219,7 +219,7 @@ https://github.com/gyf-dev/ImmersionBar
 在`bind{}`的时候这样调用就行了。
 
 ```kotlin
-dialog.immersionBar {
+immersionBar {
     fitsSystemWindows(false)
     statusBarDarkFont(true)
 }

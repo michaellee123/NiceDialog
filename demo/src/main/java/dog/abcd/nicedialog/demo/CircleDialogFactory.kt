@@ -18,8 +18,8 @@ class CircleDialogFactory(context: Context) :
         cancelable = false
     }
 
-    override fun binder(): (DialogCircleBinding, NiceDialogFragment<DialogCircleBinding>) -> Unit =
-        { _, _ ->
-        }
+    override fun binder(): NiceDialogFragment<DialogCircleBinding>.() -> Unit = {
+
+    }
 
 }
