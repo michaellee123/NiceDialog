@@ -30,6 +30,9 @@ class NiceDialog<T : ViewDataBinding>(private val binding: T) {
             Log.i(TAG, "remove dialog:$tag")
             return dialogs.remove(tag)
         }
+
+        fun getDialog(tag: String): NiceDialogFragment<*>? = dialogs[tag]
+
     }
 
     private val niceDialogConfig = NiceDialogConfig()

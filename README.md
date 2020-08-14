@@ -6,7 +6,7 @@ A Very Nice Dialog For Android Developer.
 You can use this to import `NiceDialog` into your project.
 
 ```gradle
-implementation 'dog.abcd:nicedialog:1.0.2'
+implementation 'dog.abcd:nicedialog:1.0.3'
 ```
 
 ## Simple Usage

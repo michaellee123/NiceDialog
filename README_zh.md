@@ -6,7 +6,7 @@ A Very Nice Dialog For Android Developer.
 如果连JCenter比较快的话就用这个方法。
 
 ```gradle
-implementation 'dog.abcd:nicedialog:1.0.2'
+implementation 'dog.abcd:nicedialog:1.0.3'
 ```
 
 或者就用下面这个方法，二选一即可。
@@ -16,7 +16,7 @@ repositories {
     maven { url 'https://jitpack.io' }
 }
 //something else...
-implementation 'com.github.michaellee123:NiceDialog:1.0.2'
+implementation 'com.github.michaellee123:NiceDialog:1.0.3'
 ```
 
 ## 简单使用

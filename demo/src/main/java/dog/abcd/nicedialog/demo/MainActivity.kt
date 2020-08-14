@@ -62,21 +62,23 @@ class MainActivity : AppCompatActivity() {
 //                    .show(supportFragmentManager, "tag")
 //        }
         btnSimple.setOnClickListener {
-//            NiceDialog(DialogNiceBinding.inflate(layoutInflater)).config {
-//                width = WindowManager.LayoutParams.MATCH_PARENT
-//                height = WindowManager.LayoutParams.WRAP_CONTENT
-//                gravity = Gravity.CENTER
-//            }.bind {
-//                binding.btnCancel.text = "NEW CANCEL"
-//                binding.btnConfirm.text = "NEW NICE"
-//                binding.tvMessage.text = "NICE DIALOG"
-//                binding.btnConfirm.setOnClickListener {
-//                    dismiss()
-//                }
-//            }.show(supportFragmentManager, "tag")
-            AlertFactory(this).onNext {
-                Toast.makeText(this,it.toString(),Toast.LENGTH_SHORT).show()
-            }.create().show(supportFragmentManager,"tag")
+            NiceDialog(DialogNiceBinding.inflate(layoutInflater)).config {
+                width = WindowManager.LayoutParams.MATCH_PARENT
+                height = WindowManager.LayoutParams.WRAP_CONTENT
+                gravity = Gravity.CENTER
+            }.bind {
+                binding.btnCancel.text = "NEW CANCEL"
+                binding.btnConfirm.text = "NEW NICE"
+                binding.tvMessage.text = "NICE DIALOG"
+                binding.btnConfirm.setOnClickListener {
+                    dismiss()
+                }
+                binding.btnCancel.setOnClickListener {
+                    AlertFactory(this@MainActivity).onNext {
+                        Toast.makeText(this@MainActivity,it.toString(),Toast.LENGTH_SHORT).show()
+                    }.create().show(supportFragmentManager,"tag")
+                }
+            }.show(supportFragmentManager, "tag")
         }
         btnDifficult.setOnClickListener {
             TestDialogFactory(this)

@@ -38,7 +38,11 @@ class NiceDialogFragment<T : ViewDataBinding> : DialogFragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        tag?.let { NiceDialog.removeDialog(it) }
+        tag?.let {
+            if (NiceDialog.getDialog(it) == this) {
+                NiceDialog.removeDialog(it)
+            }
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
