@@ -6,7 +6,7 @@ A Very Nice Dialog For Android Developer.
 如果连JCenter比较快的话就用这个方法。
 
 ```gradle
-implementation 'dog.abcd:nicedialog:1.0.3'
+implementation 'dog.abcd:nicedialog:1.1.0'
 ```
 
 或者就用下面这个方法，二选一即可。
@@ -16,7 +16,7 @@ repositories {
     maven { url 'https://jitpack.io' }
 }
 //something else...
-implementation 'com.github.michaellee123:NiceDialog:1.0.3'
+implementation 'com.github.michaellee123:NiceDialog:1.1.0'
 ```
 
 ## 简单使用
@@ -91,7 +91,7 @@ NiceDialog(DialogNiceBinding.inflate(layoutInflater))
             //关闭弹窗
             dismiss()
         }
-    }.show(supportFragmentManager, "tag")//如果tag不为空，显示新的dialog会关闭相同tag的旧的dialog
+    }.show(supportFragmentManager, "tag")//显示新的dialog会关闭相同tag的旧的dialog，tag需要全局唯一
 ```
 
 简单的两步操作之后你就能看到一个这样的弹窗了。
@@ -209,6 +209,13 @@ TestDialogFactory(this)
 现在会得到这样一个弹窗。
 
 ![device-2020-05-02-203649.png](device-2020-05-02-203649.png)
+
+## 注意⚠️
+
+如果在NiceDialog的回调中有与activity生命周期相关的操作，例如改变控件文字，这个情况下，如果屏幕旋转，或其他会导致activity重建的情况，会导致NiceDialog中的回调失效，严重的可能会导致崩溃。
+原因是因为屏幕旋转之后，你看到的activity对象已经是新的了，但是回调中注册的是老的，所以在回调的时候并不能对新的activity进行任何更改，因为并没有持有新的对象。
+如果需要适配这种情况，则需要在onResume的时候使用`NiceDialog.create`或`NiceDialog.createFactory`来创建NiceDialog对象，但是必须保证tag是整个项目中唯一的。
+可以在demo中看到一些测试代码，运行它，你会更了解我在说什么。
 
 ## ImmersionBar
 

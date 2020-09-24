@@ -3,7 +3,6 @@ package dog.abcd.nicedialog
 import android.graphics.drawable.ColorDrawable
 import android.view.Gravity
 import android.view.WindowManager
-import androidx.annotation.StyleRes
 
 /**
  * 弹窗配置
@@ -40,4 +39,15 @@ class NiceDialogConfig {
      * 动画style id
      */
     var animatorStyleRes = 0
+
+    /**
+     * 窗口内容透明度
+     */
+    var alpha = 1f
+
+    /**
+     * 背景透明度
+     */
+    var dimAmount = -1f
+
 }

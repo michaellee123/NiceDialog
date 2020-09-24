@@ -6,7 +6,7 @@ A Very Nice Dialog For Android Developer.
 You can use this to import `NiceDialog` into your project.
 
 ```gradle
-implementation 'dog.abcd:nicedialog:1.0.3'
+implementation 'dog.abcd:nicedialog:1.1.0'
 ```
 
 ## Simple Usage
@@ -83,7 +83,7 @@ NiceDialog(DialogNiceBinding.inflate(layoutInflater))
             //Close the dialog
             dismiss()
         }
-    }.show(supportFragmentManager, "tag")//show a new dialog will dismiss old dialog that same tag, if it not be null
+    }.show(supportFragmentManager, "tag")//show a new dialog will dismiss old dialog that same tag, this tag must be the only one of the project.
 ```
 
 You can get a dialog like this now.
@@ -203,6 +203,16 @@ TestDialogFactory(this)
 You can got a dialog like this.
 
 ![device-2020-05-02-203649.png](device-2020-05-02-203649.png)
+
+## Important changes ⚠️
+
+I found something with android activity lifecycle, after device screen rotated, the callback with NiceDialog will be unworkable, 'cause the activity you can see is a new object, but callback will change the old one, so, I fix it.
+
+Now you are ready know, when rebuilding the activity, we have to do something to change the callback to use the new one activity object.
+
+With NiceDialog, you can do that easily. You only need to use `NiceDialog.create` or `NiceDialog.createFactory` to create the dialog in the onResume method, but you must ensure the tag is the only one of the project.
+
+And you can see some code in the demo.
 
 ## ImmersionBar
 
