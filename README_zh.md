@@ -6,7 +6,7 @@ A Very Nice Dialog For Android Developer.
 如果连JCenter比较快的话就用这个方法。
 
 ```gradle
-implementation 'dog.abcd:nicedialog:1.1.0'
+implementation 'dog.abcd:nicedialog:1.2.0'
 ```
 
 或者就用下面这个方法，二选一即可。
@@ -16,7 +16,7 @@ repositories {
     maven { url 'https://jitpack.io' }
 }
 //something else...
-implementation 'com.github.michaellee123:NiceDialog:1.1.0'
+implementation 'com.github.michaellee123:NiceDialog:1.2.0'
 ```
 
 ## 简单使用
@@ -214,7 +214,10 @@ TestDialogFactory(this)
 
 如果在NiceDialog的回调中有与activity生命周期相关的操作，例如改变控件文字，这个情况下，如果屏幕旋转，或其他会导致activity重建的情况，会导致NiceDialog中的回调失效，严重的可能会导致崩溃。
 原因是因为屏幕旋转之后，你看到的activity对象已经是新的了，但是回调中注册的是老的，所以在回调的时候并不能对新的activity进行任何更改，因为并没有持有新的对象。
-如果需要适配这种情况，则需要在onResume的时候使用`NiceDialog.create`或`NiceDialog.createFactory`来创建NiceDialog对象，但是必须保证tag是整个项目中唯一的。
+<del>如果需要适配这种情况，则需要在onResume的时候使用`NiceDialog.create`或`NiceDialog.createFactory`来创建NiceDialog对象，但是必须保证tag是整个项目中唯一的。</del>
+
+**在最新的1.2.0版本中，不再需要去做这些麻烦的操作，只需要在使用Activity、Context等对象时从回调的对象中获取即可。**
+
 可以在demo中看到一些测试代码，运行它，你会更了解我在说什么。
 
 ## ImmersionBar

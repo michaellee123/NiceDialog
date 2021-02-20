@@ -6,7 +6,7 @@ A Very Nice Dialog For Android Developer.
 You can use this to import `NiceDialog` into your project.
 
 ```gradle
-implementation 'dog.abcd:nicedialog:1.1.0'
+implementation 'dog.abcd:nicedialog:1.2.0'
 ```
 
 ## Simple Usage
@@ -210,7 +210,9 @@ I found something with android activity lifecycle, after device screen rotated, 
 
 Now you are ready know, when rebuilding the activity, we have to do something to change the callback to use the new one activity object.
 
-With NiceDialog, you can do that easily. You only need to use `NiceDialog.create` or `NiceDialog.createFactory` to create the dialog in the onResume method, but you must ensure the tag is the only one of the project.
+ <del>With NiceDialog, you can do that easily. You only need to use `NiceDialog.create` or `NiceDialog.createFactory` to create the dialog in the onResume method, but you must ensure the tag is the only one of the project.</del>
+
+ **In 1.2.0 version, you just need use the Activity or Context obj from callback.**
 
 And you can see some code in the demo.
 

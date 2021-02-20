@@ -25,11 +25,11 @@ class TestDialogFactory(context: Context) :
             binding.btnCancel.text = "Cancel"
             binding.btnConfirm.setOnClickListener {
                 dismiss()
-                next?.invoke("Next!")
+                next("Next!")
             }
             binding.btnCancel.setOnClickListener {
                 dismiss()
-                finish?.invoke("Finish!")
+                finish("Finish!")
             }
         }
 

@@ -4,43 +4,30 @@ import android.app.Activity
 import android.content.Context
 import android.view.LayoutInflater
 import androidx.databinding.ViewDataBinding
-import androidx.fragment.app.FragmentManager
+import java.io.Serializable
 import java.lang.reflect.ParameterizedType
 import java.lang.reflect.Type
 
 /**
  * 对于需要多次用到的dialog，或者是内部业务稍微复杂的dialog，比如说列表选择，则继承此类进行封装
- * 注意⚠️：如果回调中涉及和生命周期相关的操作，则需要使用NiceDialog.createFactory创建对象，如果你
- * 区分不了是否需要使用NiceDialog.createFactory方法，则推荐使用createFactory，多写一点点代码能够提升可靠性，也是值得的
- * @see NiceDialog.createFactory
+ * 注意⚠️：回调中使用Activity、Context等对象时，优先从回调中的this去尝试获取，具体原因
+ * @see NiceDialog
+ *
  * @author Michael Lee
  */
 abstract class NiceDialogFactory<T : ViewDataBinding, J, K>(
     private val context: Context
-) {
-
-    /**
-     * 唯一标识，通过NiceDialog.createFactory创建时传入
-     * @see NiceDialog.createFactory
-     */
-    var tag: String? = null
-
-    /**
-     * 在多次嵌套调用时注意⚠️：如果activity重建，直接在回调中调用的supportFragmentManager会被标记位isStateSaved，
-     * 此时fragmentManager会不可用，如果有这种情况，则需要在onResume中通过createFactory方法进行创建，保证manager是最新可用的那一个
-     * @see NiceDialog.createFactory
-     */
-    var manager: FragmentManager? = null
+) : Serializable {
 
     /**
      * 回调
      */
-    protected var next: ((J) -> Unit)? = null
+    private var next: (NiceDialogFragment<T>.(J) -> Unit)? = null
 
     /**
      * 回调
      */
-    protected var finish: ((K) -> Unit)? = null
+    private var finish: (NiceDialogFragment<T>.(K) -> Unit)? = null
 
     /**
      * 在show之后此对象会创建，即config或binder回调后会创建
@@ -56,19 +43,38 @@ abstract class NiceDialogFactory<T : ViewDataBinding, J, K>(
      */
     fun onDismiss(): (NiceDialogFragment<T>) -> Unit = {}
 
-
     fun create(): NiceDialog<T> {
-        return NiceDialog.create(reflectBinding(), manager, tag, this)
+        return NiceDialog(reflectBinding(), this)
     }
 
-    fun onNext(next: ((J) -> Unit)): NiceDialogFactory<T, J, K> {
+    /**
+     * 从调用处进行注册
+     */
+    fun onNext(next: (NiceDialogFragment<T>.(J) -> Unit)): NiceDialogFactory<T, J, K> {
         this.next = next
         return this
     }
 
-    fun onFinish(finish: ((K) -> Unit)): NiceDialogFactory<T, J, K> {
+    /**
+     * 从调用处进行注册
+     */
+    fun onFinish(finish: (NiceDialogFragment<T>.(K) -> Unit)): NiceDialogFactory<T, J, K> {
         this.finish = finish
         return this
+    }
+
+    /**
+     * 从封装的Factory中调用
+     */
+    fun next(result: J) {
+        next?.invoke(dialog, result)
+    }
+
+    /**
+     * 从封装的Factory中调用
+     */
+    fun finish(result: K) {
+        finish?.invoke(dialog, result)
     }
 
     /**

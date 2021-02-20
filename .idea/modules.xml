@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/NiceDialog.iml" filepath="$PROJECT_DIR$/NiceDialog.iml" group="NiceDialog" />
-      <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" group="NiceDialog/demo" />
-      <module fileurl="file://$PROJECT_DIR$/nicedialog/nicedialog.iml" filepath="$PROJECT_DIR$/nicedialog/nicedialog.iml" group="NiceDialog/nicedialog" />
+      <module fileurl="file://$PROJECT_DIR$/NiceDialog.iml" filepath="$PROJECT_DIR$/NiceDialog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/demo/NiceDialog.demo.iml" filepath="$PROJECT_DIR$/.idea/modules/demo/NiceDialog.demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nicedialog/NiceDialog.nicedialog.iml" filepath="$PROJECT_DIR$/.idea/modules/nicedialog/NiceDialog.nicedialog.iml" />
     </modules>
   </component>
 </project>

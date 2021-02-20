@@ -3,11 +3,14 @@ package dog.abcd.nicedialog
 import android.graphics.drawable.ColorDrawable
 import android.view.Gravity
 import android.view.WindowManager
+import java.io.Serializable
 
 /**
  * 弹窗配置
+ *
+ * @author Michael Lee
  */
-class NiceDialogConfig {
+class NiceDialogConfig : Serializable {
     /**
      * 最外层宽度
      */

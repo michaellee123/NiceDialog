@@ -23,11 +23,11 @@ class AlertFactory(context: Context) : NiceDialogFactory<DialogAlertBinding, Int
             binding.button2.text = "2"
             binding.button1.setOnClickListener {
                 pd()
-                next?.invoke(1)
+                next(1)
             }
             binding.button2.setOnClickListener {
                 dismiss()
-                next?.invoke(2)
+                next(2)
             }
         }
 

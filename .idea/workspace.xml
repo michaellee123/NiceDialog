@@ -6,30 +6,77 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="NiceDialog" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:github" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cf6a009-5981-4514-a3e0-91dfd19df9e9" name="Default Changelist" comment="1、d">
+    <list default="true" id="1cf6a009-5981-4514-a3e0-91dfd19df9e9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/dog/abcd/nicedialog/demo/App.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_1_1_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_common_2_1_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_collection_collection_1_1_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_solver_1_1_3_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_databinding_databinding_common_3_6_3_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_common_2_1_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_2_0_1_jar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_gyf_immersionbar_immersionbar_3_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_gyf_immersionbar_immersionbar_3_0_0_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_gyf_immersionbar_immersionbar_components_3_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_gyf_immersionbar_immersionbar_components_3_0_0_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_gyf_immersionbar_immersionbar_ktx_3_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_gyf_immersionbar_immersionbar_ktx_3_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_javawriter_2_1_1_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_inject_javax_inject_1_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__net_sf_kxml_kxml2_2_3_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_integration_1_3_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_annotations_13_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_android_extensions_runtime_1_3_72_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_1_3_72_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_common_1_3_72_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_3_72_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NiceDialog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/NiceDialog.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README_zh.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_zh.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/dog/abcd/nicedialog/demo/AlertFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/dog/abcd/nicedialog/demo/AlertFactory.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/src/main/java/dog/abcd/nicedialog/demo/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/dog/abcd/nicedialog/demo/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/dog/abcd/nicedialog/demo/TestDialogFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/dog/abcd/nicedialog/demo/TestDialogFactory.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nicedialog/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/nicedialog/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nicedialog/nicedialog.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/nicedialog/src/main/java/dog/abcd/nicedialog/NiceDialog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/nicedialog/src/main/java/dog/abcd/nicedialog/NiceDialog.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nicedialog/src/main/java/dog/abcd/nicedialog/NiceDialogConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/nicedialog/src/main/java/dog/abcd/nicedialog/NiceDialogConfig.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nicedialog/src/main/java/dog/abcd/nicedialog/NiceDialogFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/nicedialog/src/main/java/dog/abcd/nicedialog/NiceDialogFactory.kt" afterDir="false" />
@@ -40,7 +87,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3_API_29" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[RFCM9002EYZ]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -78,7 +125,6 @@
   <component name="ProjectViewState">
     <option name="compactDirectories" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -87,11 +133,12 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="ScreenshotViewer.SavePath" value="$PROJECT_DIR$" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="http.proxy" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.do.not.copy.http.proxy.settings.to.gradle" value="false" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -124,6 +171,7 @@
       <option name="DEPLOY_AS_INSTANT" value="false" />
       <option name="ARTIFACT_NAME" value="" />
       <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
       <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
@@ -159,22 +207,28 @@
       </Native>
       <Profilers>
         <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
         <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
         <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
       <method v="2">
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="demo" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
-      <module name="demo" />
+      <module name="NiceDialog.demo" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
       <option name="ARTIFACT_NAME" value="" />
       <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
       <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
@@ -210,11 +264,16 @@
       </Native>
       <Profilers>
         <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
         <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
         <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
       <method v="2">
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
@@ -325,7 +384,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597400768774</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="1、新增createFactory和create方法，用于适配屏幕旋转的情况&#10;2、修改dialog map的管理策略，nice dialog不再会自动清除map中的内容&#10;3、修改各个类相互依赖的关系&#10;4、新增弹窗透明度配置&#10;5、NiceDialog和NiceDialogFragment中新增onDismiss方法">
+      <created>1600939980164</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1600939980164</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -341,15 +407,44 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
-        <entry key="MAIN">
+        <entry key="1">
           <value>
             <State>
-              <option name="COLUMN_ORDER" />
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:/Users/michaellee/StudioProjects/NiceDialog/nicedialog/src/main/java/dog/abcd/nicedialog" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
             </State>
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="1" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
@@ -363,106 +458,63 @@
     <MESSAGE value="ignore ds_store" />
     <MESSAGE value="1、调用方式优化&#10;2、tag关闭相同的旧弹窗" />
     <MESSAGE value="1、修复同一tag的多个弹窗多次调用后有可能出现无法使用tag dismiss的bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="1、修复同一tag的多个弹窗多次调用后有可能出现无法使用tag dismiss的bug" />
+    <MESSAGE value="1、新增createFactory和create方法，用于适配屏幕旋转的情况&#10;2、修改dialog map的管理策略，nice dialog不再会自动清除map中的内容&#10;3、修改各个类相互依赖的关系&#10;4、新增弹窗透明度配置&#10;5、NiceDialog和NiceDialogFragment中新增onDismiss方法" />
+    <option name="LAST_COMMIT_MESSAGE" value="1、新增createFactory和create方法，用于适配屏幕旋转的情况&#10;2、修改dialog map的管理策略，nice dialog不再会自动清除map中的内容&#10;3、修改各个类相互依赖的关系&#10;4、新增弹窗透明度配置&#10;5、NiceDialog和NiceDialogFragment中新增onDismiss方法" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="578" y="287" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1600842140956">
+    <state x="365" y="261" key="#PSD" timestamp="1613789476642">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="578" y="287" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1600842140956" />
-    <state x="619" y="248" key="#com.intellij.ide.util.MemberChooser" timestamp="1600676200220">
+    <state x="365" y="261" key="#PSD/0.0.1680.1050@0.0.1680.1050" timestamp="1613789476642" />
+    <state x="619" y="245" key="#com.intellij.ide.util.MemberChooser" timestamp="1613807650045">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="619" y="248" key="#com.intellij.ide.util.MemberChooser/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1600676200220" />
-    <state x="379" y="139" key="CommitChangelistDialog2" timestamp="1600684212991">
-      <screen x="0" y="23" width="1680" height="960" />
+    <state x="619" y="245" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1613807650045" />
+    <state x="100" y="100" width="1480" height="850" key="DiffContextDialog" timestamp="1613812064202">
+      <screen x="0" y="25" width="1680" height="949" />
     </state>
-    <state x="379" y="139" key="CommitChangelistDialog2/0.23.1680.960@0.23.1680.960" timestamp="1600684212991" />
-    <state x="379" y="127" key="CommitChangelistDialog2/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1597400768373" />
-    <state width="476" height="464" key="DebuggerActiveHint" timestamp="1600847140066">
+    <state x="100" y="100" width="1480" height="850" key="DiffContextDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1613812019569" />
+    <state x="100" y="100" width="1480" height="850" key="DiffContextDialog/0.25.1680.949@0.25.1680.949" timestamp="1613812064202" />
+    <state width="1638" height="202" key="GridCell.Tab.0.bottom" timestamp="1613811870659">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="476" height="464" key="DebuggerActiveHint/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1600847140066" />
-    <state x="100" y="100" width="1480" height="850" key="DiffContextDialog" timestamp="1600937726021">
+    <state width="1638" height="202" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1613811870659" />
+    <state width="1638" height="202" key="GridCell.Tab.0.center" timestamp="1613811870658">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="100" y="100" width="1480" height="850" key="DiffContextDialog/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1600937726021" />
-    <state width="1638" height="205" key="GridCell.Tab.0.bottom" timestamp="1600936679095">
+    <state width="1638" height="202" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1613811870658" />
+    <state width="1638" height="202" key="GridCell.Tab.0.left" timestamp="1613811870657">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="205" key="GridCell.Tab.0.bottom/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1600936679095" />
-    <state width="1638" height="205" key="GridCell.Tab.0.center" timestamp="1600936679093">
+    <state width="1638" height="202" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1613811870657" />
+    <state width="1638" height="202" key="GridCell.Tab.0.right" timestamp="1613811870658">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="205" key="GridCell.Tab.0.center/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1600936679093" />
-    <state width="1638" height="205" key="GridCell.Tab.0.left" timestamp="1600936679092">
+    <state width="1638" height="202" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1613811870658" />
+    <state x="594" y="231" key="RollbackChangesDialog" timestamp="1613789538227">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="205" key="GridCell.Tab.0.left/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1600936679092" />
-    <state width="1638" height="205" key="GridCell.Tab.0.right" timestamp="1600936679094">
+    <state x="594" y="231" key="RollbackChangesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1613789538227" />
+    <state x="341" y="161" key="SettingsEditor" timestamp="1613790877939">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="205" key="GridCell.Tab.0.right/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1600936679094" />
-    <state x="550" y="248" key="MultipleFileMergeDialog" timestamp="1595382592402">
+    <state x="341" y="161" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1613790877939" />
+    <state x="401" y="139" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1613810933954">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="550" y="248" key="MultipleFileMergeDialog/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1595382592402" />
-    <state x="598" y="244" key="RollbackChangesDialog" timestamp="1600929214287">
+    <state x="401" y="139" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1613810933954" />
+    <state x="680" y="327" key="refactoring.ChangeSignatureDialog" timestamp="1613810739501">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="598" y="244" key="RollbackChangesDialog/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1600929214287" />
-    <state x="105" y="23" width="1470" height="960" key="ScreenshotViewer.Dimensions" timestamp="1600677548196">
+    <state x="680" y="327" key="refactoring.ChangeSignatureDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1613810739501" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1613790760256">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="105" y="23" width="1470" height="960" key="ScreenshotViewer.Dimensions/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1600677548196" />
-    <state x="341" y="164" key="SettingsEditor" timestamp="1600657117376">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="341" y="164" key="SettingsEditor/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1600657117376" />
-    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1597400791311">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="440" y="265" key="Vcs.Push.Dialog.v2/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1597400791311" />
-    <state x="100" y="100" width="1480" height="850" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1600935721122">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="100" y="100" width="1480" height="850" key="com.intellij.history.integration.ui.views.FileHistoryDialog/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1600935721122" />
-    <state x="422" y="143" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1600850534924">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="422" y="143" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1600850534924" />
-    <state x="587" y="323" key="git4idea.merge.GitMergeDialog" timestamp="1595383316653">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="587" y="323" key="git4idea.merge.GitMergeDialog/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1595383316653" />
-    <state x="496" y="323" key="git4idea.merge.GitPullDialog" timestamp="1595382860144">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="496" y="323" key="git4idea.merge.GitPullDialog/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1595382860144" />
-    <state x="503" y="231" width="672" height="678" key="search.everywhere.popup" timestamp="1600938946765">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="503" y="231" width="672" height="678" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1600914473140" />
-    <state x="503" y="231" width="672" height="678" key="search.everywhere.popup/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1600938946765" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1613790760256" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/demo/src/main/java/dog/abcd/nicedialog/demo/TestDialogFactory.kt</url>
-          <line>22</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/demo/src/main/java/dog/abcd/nicedialog/demo/TestDialogFactory.kt</url>
-          <line>15</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/demo/src/main/java/dog/abcd/nicedialog/demo/MainActivity.kt</url>
-          <line>108</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.fragment/fragment/1.1.0/b9ebb04df2cb0cad4419af3c658690bc82aa5706/fragment-1.1.0-sources.jar!/androidx/fragment/app/FragmentManagerImpl.java</url>
           <line>392</line>

@@ -9,7 +9,6 @@ import android.view.Gravity
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.gyf.immersionbar.ImmersionBar
 import com.gyf.immersionbar.ktx.immersionBar
 import dog.abcd.nicedialog.NiceDialog
 import dog.abcd.nicedialog.demo.databinding.DialogNiceBinding
@@ -37,7 +36,8 @@ class MainActivity : AppCompatActivity() {
             navigationBarColor(R.color.white)
         }
         setContentView(R.layout.activity_main)
-        //注意看部分失效的情况
+        initDialog()
+        //注意使用回调中使用的activity对象是从fragment里面来的
         btnNormal.setOnClickListener {
             //直接弹出弹窗
             NiceDialog(DialogNiceBinding.inflate(layoutInflater))
@@ -54,9 +54,8 @@ class MainActivity : AppCompatActivity() {
                     binding.btnConfirm.setOnClickListener {
                         dismiss()
                         Toast.makeText(context, "onClick!!!", Toast.LENGTH_SHORT).show()
-                        //使用kotlin生成的控件需要使用this@MainActivity标记作用域
-                        //直接弹出的在屏幕旋转或者其他activity重建的情况下不会生效
-                        this@MainActivity.btnNormal.text = "如果屏幕旋转之后不会生效"
+                        //使用kotlin生成的控件需要使用activity标记作用域，Java的或许需要findViewById，不过我没试过
+                        activity!!.btnNormal.text = "屏幕旋转看效果"
                     }
                     binding.btnCancel.setOnClickListener {
                         NiceDialog.dismiss("tagNormal")
@@ -66,18 +65,20 @@ class MainActivity : AppCompatActivity() {
                 }.show(supportFragmentManager, "tagNormal")
                 .onDismiss {
                     //dismiss回调
-                    Toast.makeText(this, "onDismiss!!!", Toast.LENGTH_SHORT).show()
-                    //在屏幕旋转或者其他activity重建的情况下不会生效
-                    this@MainActivity.btnNewActivity.text = "如果屏幕旋转之后不会生效"
+                    Toast.makeText(activity, "onDismiss!!!", Toast.LENGTH_SHORT).show()
+                    activity!!.btnNewActivity.text = "屏幕旋转看效果"
                 }
         }
 
-        //使用onResume中创建的dialog
         btnSimple.setOnClickListener {
-            dialog?.show()
+            dialog?.bind {
+                //旋转屏幕为横向时，可以撑满全屏
+                immersionBar {
+                    fitsSystemWindows(false)
+                }
+            }?.show(supportFragmentManager, "dialogSimple")
         }
 
-        //使用onResume中创建的dialogFactory
         btnDifficult.setOnClickListener {
             Log.e(javaClass.simpleName, this.toString())
             dialogFactory1?.create()?.config {
@@ -90,7 +91,7 @@ class MainActivity : AppCompatActivity() {
                 binding.btnConfirm.text = "Second!"
             }?.bind {
                 binding.btnConfirm.text = "Third!"
-            }?.show()
+            }?.show(supportFragmentManager, "dialog1")
         }
 
         btnNewActivity.setOnClickListener {
@@ -100,35 +101,20 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-        initDialog()
-    }
-
     fun initDialog() {
-        dialogFactory1 =
-            NiceDialog.createFactory(
-                { TestDialogFactory(this) },
-                supportFragmentManager,
-                "dialog1"
-            )
+        dialogFactory1 = TestDialogFactory(this)
         dialogFactory1!!.onNext {
             //这个是TestDialogFactory中传递回来的参数
             //紧接着再弹一个弹窗
             niceDialog2.bind {
                 //在原有的基础上继续操作控件
                 binding.tvMessage.text = it
-            }.show()
+            }.show(dialogFactory1!!.dialog.fragmentManager!!, "dialog2")
         }.onFinish {
             //取消的回调
-            Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
+            Toast.makeText(activity, it, Toast.LENGTH_SHORT).show()
         }
-        dialogFactory2 =
-            NiceDialog.createFactory(
-                { TestDialogFactory(this) },
-                supportFragmentManager,
-                "dialog2"
-            )
+        dialogFactory2 = TestDialogFactory(this)
         niceDialog2 = dialogFactory2!!.create().config {
             height = WindowManager.LayoutParams.MATCH_PARENT
             backgroundDrawable = ColorDrawable(resources.getColor(R.color.colorPrimaryDark))
@@ -142,17 +128,10 @@ class MainActivity : AppCompatActivity() {
             binding.btnConfirm.text = "Nice!"
             binding.btnConfirm.setOnClickListener {
                 dismiss()
-                //再调用一下基础按钮点击事件（旋转屏幕后无法显示新弹窗）
-                this@MainActivity.btnNormal.callOnClick()
-                //调用简单封装按钮点击事件（旋转屏幕后可以显示新弹窗）
-                this@MainActivity.btnSimple.callOnClick()
+                activity?.btnNormal?.callOnClick()
             }
         }
-        dialog = NiceDialog.create(
-            DialogNiceBinding.inflate(layoutInflater),
-            supportFragmentManager,
-            "tagSimple"
-        ).config {
+        dialog = NiceDialog(DialogNiceBinding.inflate(layoutInflater)).config {
             width = WindowManager.LayoutParams.MATCH_PARENT
             height = WindowManager.LayoutParams.WRAP_CONTENT
             gravity = Gravity.CENTER
@@ -163,24 +142,16 @@ class MainActivity : AppCompatActivity() {
             binding.btnConfirm.setOnClickListener {
                 dismiss()
                 //屏幕旋转后可以继续弹出新的dialog
-                niceDialog2.show()
+                activity?.btnSimple?.text = "我就站在你面前，你看我几分像从前"
+                niceDialog2.show(this.fragmentManager!!, "dialog2")
             }
             binding.btnCancel.setOnClickListener {
                 dismiss()
-                //屏幕旋转后不可以弹出新的dialog
-                NiceDialog.createFactory({
-                    AlertFactory(this@MainActivity)
-                }, supportFragmentManager, "alert").onNext {
-                    Toast.makeText(this@MainActivity, it.toString(), Toast.LENGTH_SHORT).show()
-                }.create().show()
+                AlertFactory(activity!!).onNext {
+                    Toast.makeText(activity, it.toString(), Toast.LENGTH_SHORT).show()
+                }.create().show(fragmentManager!!, "alert")
             }
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        if (isFinishing) {
-            NiceDialog.removeDialog("dialog1", "dialog2", "tagSimple", "tagNormal")
-        }
-    }
 }
