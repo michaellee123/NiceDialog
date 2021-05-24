@@ -6,17 +6,21 @@ A Very Nice Dialog For Android Developer.
 You can use this to import `NiceDialog` into your project.
 
 ```gradle
-implementation 'dog.abcd:nicedialog:1.2.0'
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+//something else...
+implementation 'com.github.michaellee123:NiceDialog:1.2.1'
 ```
 
 ## Simple Usage
 
-First at all, you should make your project support databinding, add this to your project's gradle.
+First at all, you should make your project support viewBinding, add this to your project's gradle.
 
  ```gradle
 android {
     //something else...
-    dataBinding {
+    viewBinding {
         enabled = true
     }
 }
@@ -24,38 +28,35 @@ android {
  
  ## Create A Layout XML
  
- You just need make your all code included by `<layout></layout>`, like this.
- 
  `dialog_nice.xml`
  
  ```xml
-<layout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:gravity="center"
+    android:orientation="vertical">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorPrimary"
-        android:gravity="center"
-        android:orientation="vertical">
+    <TextView
+        android:id="@+id/tvMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:textSize="48sp"
+        android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/tvMessage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#ffffff"
-            android:textSize="48sp"
-            android:textStyle="bold" />
+    <Button
+        android:id="@+id/btnConfirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
-        <Button
-            android:id="@+id/btnConfirm"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-    </LinearLayout>
-</layout>
+</LinearLayout>
  ```
  
- Then, databinding will auto create a class named `DialogNiceBinding`.
+ Then, a class named `DialogNiceBinding` will auto created.
+ 
+ If you use DataBinding, You need make your all code included by `<layout></layout>`.
  
  ## Show A Dialog By NiceDialog
  
@@ -103,20 +104,17 @@ In a project, a dialog is usually reused many times, so I made `NiceDialogFactor
 `dialog_circle.xml`
 
 ```xml
-<layout>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true" />
-    </RelativeLayout>
-</layout>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+</RelativeLayout>
 ```
 
 Then we create a class based by `NiceDialogFactory`, like this.
@@ -234,7 +232,11 @@ immersionBar {
 ## Proguard
 
 ```
--keep class * extends androidx.databinding.ViewDataBinding{
+-keep class * implements androidx.viewbinding.ViewBinding{
     *;
 }
 ```
+
+## Use ViewBinding and DataBinding together
+
+First of all, if your Android Studio is 4.2 version or higher, you should know , openJDK11 will install with Android Studio, it's not about your gradle setting, so if you use DataBinding broke by some exception, you should check the JDK version first. 'Cause DataBinding only work in JDK 1.8. PS: do not believe terminal 'java -version', only the project structure jdk location's version is right. 

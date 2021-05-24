@@ -5,10 +5,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.DialogFragment
+import androidx.viewbinding.ViewBinding
 
-class NiceDialogFragment<T : ViewDataBinding>() : DialogFragment() {
+class NiceDialogFragment<T : ViewBinding>() : DialogFragment() {
 
     constructor(niceDialog: NiceDialog<T>) : this() {
         this.niceDialog = niceDialog

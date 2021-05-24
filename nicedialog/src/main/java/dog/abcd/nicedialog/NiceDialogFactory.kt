@@ -3,7 +3,7 @@ package dog.abcd.nicedialog
 import android.app.Activity
 import android.content.Context
 import android.view.LayoutInflater
-import androidx.databinding.ViewDataBinding
+import androidx.viewbinding.ViewBinding
 import java.io.Serializable
 import java.lang.reflect.ParameterizedType
 import java.lang.reflect.Type
@@ -15,7 +15,7 @@ import java.lang.reflect.Type
  *
  * @author Michael Lee
  */
-abstract class NiceDialogFactory<T : ViewDataBinding, J, K>(
+abstract class NiceDialogFactory<T : ViewBinding, J, K>(
     private val context: Context
 ) : Serializable {
 

@@ -3,69 +3,62 @@ A Very Nice Dialog For Android Developer.
 
 ## 导入
 
-如果连JCenter比较快的话就用这个方法。
-
-```gradle
-implementation 'dog.abcd:nicedialog:1.2.0'
-```
-
-或者就用下面这个方法，二选一即可。
+在项目`build.gradle`文件中添加：
 
 ```gradle
 repositories {
     maven { url 'https://jitpack.io' }
 }
-//something else...
-implementation 'com.github.michaellee123:NiceDialog:1.2.0'
+//...
+implementation 'com.github.michaellee123:NiceDialog:1.2.1'
 ```
 
 ## 简单使用
 
-首先需要你的项目支持DataBinding，在gradle文件中添加如下代码
+首先需要你的项目支持ViewBinding，在gradle文件中添加如下代码
 
  ```gradle
 android {
     //...
-    dataBinding {
+    viewBinding {
         enabled = true
     }
 }
  ```
+
+⚠️注意，在1.2.0及以前版本仅支持DataBinding，1.2.1之后推荐使用ViewBinding
  
  ## 创建一个布局
- 
- 需要用`<layout></layout>`包裹整个布局。
  
  `dialog_nice.xml`
  
  ```xml
-<layout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:gravity="center"
+    android:orientation="vertical">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorPrimary"
-        android:gravity="center"
-        android:orientation="vertical">
+    <TextView
+        android:id="@+id/tvMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:textSize="48sp"
+        android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/tvMessage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#ffffff"
-            android:textSize="48sp"
-            android:textStyle="bold" />
+    <Button
+        android:id="@+id/btnConfirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
-        <Button
-            android:id="@+id/btnConfirm"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-    </LinearLayout>
-</layout>
+</LinearLayout>
  ```
  
- 现在DataBinding会自动创建一个类 `DialogNiceBinding`。
+ 现在会自动创建一个类 `DialogNiceBinding`。
+ 
+ 如果是DataBinding需要用`<layout></layout>`包裹整个布局。
  
  ## 使用NiceDialog显示一个弹窗
  
@@ -111,20 +104,17 @@ NiceDialog.dismiss("tag")
 `dialog_circle.xml`
 
 ```xml
-<layout>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true" />
-    </RelativeLayout>
-</layout>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+</RelativeLayout>
 ```
 
 然后再创建一个类继承`NiceDialogFactory`。
@@ -240,7 +230,11 @@ immersionBar {
 ## 混淆
 
 ```
--keep class * extends androidx.databinding.ViewDataBinding{
+-keep class * implements androidx.viewbinding.ViewBinding{
     *;
 }
 ```
+
+## ViewBinding 与 DataBinding 混用
+
+如果你的Android Studio版本是4.2及以上，它会自带一个openJDK11，因为DataBinding只能在JDK1.8上面使用，所以当你遇到异常的时候，应该首先检查你的JDK版本，这并不和你在gradle中的设置有什么联系，就算是设置的1.8，它其实也用的是JDK11，那你需要仔细确认，对了，即使是在终端里面java -version输出是1.8，也并不代表Android Studio用的是这个版本，你应该看项目jdk location中的目录。

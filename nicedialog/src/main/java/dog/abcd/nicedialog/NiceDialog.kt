@@ -2,8 +2,8 @@ package dog.abcd.nicedialog
 
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.FragmentManager
+import androidx.viewbinding.ViewBinding
 import java.io.Serializable
 
 /**
@@ -17,7 +17,7 @@ import java.io.Serializable
  * @see NiceDialogFragment.getActivity
  * @author Michael Lee
  */
-class NiceDialog<T : ViewDataBinding>(val binding: T, private val niceDialogFactory: NiceDialogFactory<T, *, *>? = null) : Serializable {
+class NiceDialog<T : ViewBinding>(val binding: T, private val niceDialogFactory: NiceDialogFactory<T, *, *>? = null) : Serializable {
 
     companion object {
         private const val TAG = "NiceDialog"
