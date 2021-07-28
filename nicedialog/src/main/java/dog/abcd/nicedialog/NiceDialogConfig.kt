@@ -1,6 +1,5 @@
 package dog.abcd.nicedialog
 
-import android.graphics.drawable.ColorDrawable
 import android.view.Gravity
 import android.view.WindowManager
 import java.io.Serializable
@@ -31,7 +30,7 @@ class NiceDialogConfig : Serializable {
      * fitsSystemWindows设置为true时充当状态栏背景,
      * fitsSystemWindows设置为false时状态栏背景就是布局文件最外层的背景
      */
-    var backgroundDrawable = ColorDrawable(0x00000000)
+    var backgroundColor = 0x00000000
     var paddingTop = 0
     var paddingBottom = 0
     var paddingLeft = 0

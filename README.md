@@ -10,7 +10,7 @@ repositories {
     maven { url 'https://jitpack.io' }
 }
 //something else...
-implementation 'com.github.michaellee123:NiceDialog:1.2.1'
+implementation 'com.github.michaellee123:NiceDialog:1.2.2'
 ```
 
 ## Simple Usage
@@ -63,13 +63,13 @@ android {
  Simply call `NiceDialog` at the desired location.
  
 ```kotlin
-NiceDialog(DialogNiceBinding.inflate(layoutInflater))
+NiceDialog(DialogNiceBinding::class.java)
     .config {
         //You can configure some parameters, but not all
         width = WindowManager.LayoutParams.MATCH_PARENT //default is MATCH_PARENT
         height = WindowManager.LayoutParams.WRAP_CONTENT //default is MATCH_PARENT
         gravity = Gravity.BOTTOM //this is default value
-        backgroundDrawable = ColorDrawable(0x00000000) //this is default value
+        backgroundColor = 0x00000000 //this is default value
         paddingTop = 0 //this is default value
         paddingBottom = 48 //default is 0
         paddingLeft = 48 //default is 0
@@ -239,4 +239,4 @@ immersionBar {
 
 ## Use ViewBinding and DataBinding together
 
-First of all, if your Android Studio is 4.2 version or higher, you should know , openJDK11 will install with Android Studio, it's not about your gradle setting, so if you use DataBinding broke by some exception, you should check the JDK version first. 'Cause DataBinding only work in JDK 1.8. PS: do not believe terminal 'java -version', only the project structure jdk location's version is right. 
+First of all, if your Android Studio is 4.2 version or higher, you should know , openJDK11 will install with Android Studio, it's not about your gradle setting, so if you use DataBinding broke by some exception, you should check the JDK version first. 'Cause DataBinding only work in JDK 1.8. PS: do not believe terminal 'java -version', only the project structure jdk location's version is right.

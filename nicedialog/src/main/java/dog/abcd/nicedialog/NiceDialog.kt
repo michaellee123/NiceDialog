@@ -1,5 +1,6 @@
 package dog.abcd.nicedialog
 
+import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
@@ -17,9 +18,13 @@ import java.io.Serializable
  * @see NiceDialogFragment.getActivity
  * @author Michael Lee
  */
-class NiceDialog<T : ViewBinding>(val binding: T, private val niceDialogFactory: NiceDialogFactory<T, *, *>? = null) : Serializable {
+open class NiceDialog<T : ViewBinding>(
+    val clazz: Class<T>,
+    val niceDialogFactory: NiceDialogFactory<T, *, *>? = null
+) : Serializable {
 
     companion object {
+
         private const val TAG = "NiceDialog"
 
         private val dialogs = HashMap<String, NiceDialogFragment<*>>()
@@ -55,6 +60,7 @@ class NiceDialog<T : ViewBinding>(val binding: T, private val niceDialogFactory:
     /**
      * 弹窗本体
      */
+    @Transient
     var dialogFragment: NiceDialogFragment<T>? = null
         set(value) {
             field = value
@@ -91,6 +97,10 @@ class NiceDialog<T : ViewBinding>(val binding: T, private val niceDialogFactory:
         niceDialogFactory?.onDismiss()?.invoke(this)
     }
 
+    var onSaveInstanceStateListener: NiceDialogFragment<T>.(Bundle) -> Unit = {
+        niceDialogFactory?.onSaveInstanceState()?.invoke(this, it)
+    }
+
     /**
      * 弹窗配置，可以多次设置，属性以最后一次设置的为准
      */
@@ -125,6 +135,15 @@ class NiceDialog<T : ViewBinding>(val binding: T, private val niceDialogFactory:
         return this
     }
 
+    fun onSaveInstanceState(listener: NiceDialogFragment<T>.(Bundle) -> Unit): NiceDialog<T> {
+        val old = this.onSaveInstanceStateListener
+        this.onSaveInstanceStateListener = {
+            old(it)
+            listener(it)
+        }
+        return this
+    }
+
     /**
      * 在单次使用时，manager传activity中的就行。在嵌套调用时，manager传回调中对象获取的。
      * tag必传，多个相同tag的弹窗只会显示最后一个，之前的会全部被自动dismiss
@@ -137,7 +156,7 @@ class NiceDialog<T : ViewBinding>(val binding: T, private val niceDialogFactory:
             throw IllegalArgumentException("tag must not be null")
         }
         dismiss(tag)
-        dialogFragment = NiceDialogFragment(this)
+        dialogFragment = NiceDialogFragment.create(this)
         dialogs[tag] = dialogFragment!!
         if (manager.isStateSaved) {
             return dialogFragment!!

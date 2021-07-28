@@ -1,12 +1,16 @@
 package dog.abcd.nicedialog
 
-import android.app.Activity
 import android.content.Context
-import android.view.LayoutInflater
+import android.os.Bundle
+import android.util.Log
 import androidx.viewbinding.ViewBinding
 import java.io.Serializable
+import java.lang.Exception
 import java.lang.reflect.ParameterizedType
 import java.lang.reflect.Type
+import kotlin.reflect.KClass
+import kotlin.reflect.KType
+import kotlin.reflect.typeOf
 
 /**
  * 对于需要多次用到的dialog，或者是内部业务稍微复杂的dialog，比如说列表选择，则继承此类进行封装
@@ -43,8 +47,10 @@ abstract class NiceDialogFactory<T : ViewBinding, J, K>(
      */
     fun onDismiss(): (NiceDialogFragment<T>) -> Unit = {}
 
+    fun onSaveInstanceState():NiceDialogFragment<T>.(Bundle)->Unit = {}
+
     fun create(): NiceDialog<T> {
-        return NiceDialog(reflectBinding(), this)
+        return NiceDialog(getBindingRealType()!!, this)
     }
 
     /**
@@ -77,27 +83,26 @@ abstract class NiceDialogFactory<T : ViewBinding, J, K>(
         finish?.invoke(dialog, result)
     }
 
-    /**
-     * 反射实例化binding
-     */
-    private fun reflectBinding(): T {
-        val clazz = getRealType()
-        val inflateMethod = clazz.getMethod("inflate", LayoutInflater::class.java)
-        return inflateMethod.invoke(
-            null,
-            if (context is Activity) context.layoutInflater else LayoutInflater.from(context)
-        ) as T
-    }
-
-    /**
-     * 使用反射技术得到T的真实类型
-     */
-    private fun getRealType(): Class<*> {
-        // 获取当前new的对象的泛型的父类类型
+    private fun getBindingRealType(): Class<T>? {
         val genericSuperclass: Type = this.javaClass.genericSuperclass!! as ParameterizedType
         val pt = genericSuperclass as ParameterizedType
-        // 获取第一个类型参数的真实类型
-        return pt.actualTypeArguments[0] as Class<*>
+        var clazz: Class<T>? = null
+        for (type in pt.actualTypeArguments) {
+            val cls = type as Class<T>
+            if (interfaceContainsViewBinding(cls)) {
+                clazz = cls
+            }
+        }
+        return clazz
+    }
+
+    private fun interfaceContainsViewBinding(clazz: Class<*>): Boolean {
+        val result = clazz.interfaces.contains(ViewBinding::class.java)
+        return clazz.superclass?.let {
+            interfaceContainsViewBinding(it) or result
+        } ?: kotlin.run {
+            result
+        }
     }
 
 }

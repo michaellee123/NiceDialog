@@ -10,7 +10,7 @@ repositories {
     maven { url 'https://jitpack.io' }
 }
 //...
-implementation 'com.github.michaellee123:NiceDialog:1.2.1'
+implementation 'com.github.michaellee123:NiceDialog:1.2.2'
 ```
 
 ## 简单使用
@@ -63,13 +63,13 @@ android {
  ## 使用NiceDialog显示一个弹窗
  
 ```kotlin
-NiceDialog(DialogNiceBinding.inflate(layoutInflater))
+NiceDialog(DialogNiceBinding::class.java)
     .config {
         //可以在这里配置一些属性，按需配置即可，不用写完。
         width = WindowManager.LayoutParams.MATCH_PARENT //default is MATCH_PARENT
         height = WindowManager.LayoutParams.WRAP_CONTENT //default is MATCH_PARENT
         gravity = Gravity.BOTTOM //this is default value
-        backgroundDrawable = ColorDrawable(0x00000000) //this is default value
+        backgroundColor = 0x00000000 //this is default value
         paddingTop = 0 //this is default value
         paddingBottom = 48 //default is 0
         paddingLeft = 48 //default is 0

@@ -2,7 +2,6 @@ package dog.abcd.nicedialog.demo
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
@@ -24,7 +23,6 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var niceDialog2: NiceDialog<DialogNiceBinding>
 
-
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,17 +38,18 @@ class MainActivity : AppCompatActivity() {
         //注意使用回调中使用的activity对象是从fragment里面来的
         btnNormal.setOnClickListener {
             //直接弹出弹窗
-            NiceDialog(DialogNiceBinding.inflate(layoutInflater))
+            NiceDialog(DialogNiceBinding::class.java)
                 .config {
                     width = WindowManager.LayoutParams.MATCH_PARENT
                     height = WindowManager.LayoutParams.WRAP_CONTENT
                     gravity = Gravity.BOTTOM
-                    backgroundDrawable = ColorDrawable(0x00000000)
+                    backgroundColor = 0x00000000
                     cancelable = true
                     animatorStyleRes = R.style.NiceDialog_Animation_SlideBottom
                 }.bind {
                     binding.tvMessage.text = "Nice Dialog!"
-                    binding.btnConfirm.text = "Cool!"
+                    binding.btnConfirm.text = "Cool!" + activity.toString()
+                    binding.btnCancel.text = state?.getString("activity")
                     binding.btnConfirm.setOnClickListener {
                         dismiss()
                         Toast.makeText(context, "onClick!!!", Toast.LENGTH_SHORT).show()
@@ -67,6 +66,8 @@ class MainActivity : AppCompatActivity() {
                     //dismiss回调
                     Toast.makeText(activity, "onDismiss!!!", Toast.LENGTH_SHORT).show()
                     activity!!.btnNewActivity.text = "屏幕旋转看效果"
+                }.onSaveInstanceState {
+                    it.putString("activity", binding.btnConfirm.text.toString())
                 }
         }
 
@@ -117,7 +118,7 @@ class MainActivity : AppCompatActivity() {
         dialogFactory2 = TestDialogFactory(this)
         niceDialog2 = dialogFactory2!!.create().config {
             height = WindowManager.LayoutParams.MATCH_PARENT
-            backgroundDrawable = ColorDrawable(resources.getColor(R.color.colorPrimaryDark))
+            backgroundColor = resources.getColor(R.color.colorPrimaryDark)
         }.bind {
             //利用immersionBar修改状态栏显示
             immersionBar {
@@ -131,7 +132,7 @@ class MainActivity : AppCompatActivity() {
                 activity?.btnNormal?.callOnClick()
             }
         }
-        dialog = NiceDialog(DialogNiceBinding.inflate(layoutInflater)).config {
+        dialog = NiceDialog(DialogNiceBinding::class.java).config {
             width = WindowManager.LayoutParams.MATCH_PARENT
             height = WindowManager.LayoutParams.WRAP_CONTENT
             gravity = Gravity.CENTER

@@ -1,5 +1,6 @@
 package dog.abcd.nicedialog
 
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -8,19 +9,27 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.viewbinding.ViewBinding
 
-class NiceDialogFragment<T : ViewBinding>() : DialogFragment() {
+class NiceDialogFragment<T : ViewBinding> : DialogFragment() {
 
-    constructor(niceDialog: NiceDialog<T>) : this() {
-        this.niceDialog = niceDialog
+    companion object {
+        fun <T : ViewBinding> create(niceDialog: NiceDialog<T>): NiceDialogFragment<T> {
+            val dialogFragment = NiceDialogFragment<T>()
+            val args = Bundle()
+            args.putSerializable("niceDialog", niceDialog)
+            dialogFragment.arguments = args
+            return dialogFragment
+        }
     }
 
     lateinit var binding: T
 
     lateinit var niceDialog: NiceDialog<T>
 
+    var state: Bundle? = null
+
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        outState.putSerializable("niceDialog", niceDialog)
+        niceDialog.onSaveInstanceStateListener(this, outState)
     }
 
     /**
@@ -31,11 +40,10 @@ class NiceDialogFragment<T : ViewBinding>() : DialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        if (!this::niceDialog.isInitialized && savedInstanceState != null) {
-            niceDialog = savedInstanceState.getSerializable("niceDialog") as NiceDialog<T>
-        }
-
-        binding = niceDialog.binding
+        this.state = savedInstanceState
+        niceDialog = arguments?.getSerializable("niceDialog") as NiceDialog<T>
+        val method = niceDialog.clazz.getMethod("inflate", LayoutInflater::class.java)
+        binding = method.invoke(null, inflater) as T
         niceDialog.dialogFragment = this
         isCancelable = niceDialog.niceDialogConfig.cancelable
         val parent = binding.root.parent
@@ -83,7 +91,7 @@ class NiceDialogFragment<T : ViewBinding>() : DialogFragment() {
     }
 
     private fun confirmConfig() {
-        dialog?.window?.setBackgroundDrawable(niceDialog.niceDialogConfig.backgroundDrawable)
+        dialog?.window?.setBackgroundDrawable(ColorDrawable(niceDialog.niceDialogConfig.backgroundColor))
         dialog?.window?.decorView?.setPadding(
             niceDialog.niceDialogConfig.paddingLeft,
             niceDialog.niceDialogConfig.paddingTop,
@@ -110,12 +118,22 @@ class NiceDialogFragment<T : ViewBinding>() : DialogFragment() {
      * @see NiceDialog.onDismiss
      * @see NiceDialogFactory.onDismiss
      */
-    fun onDismiss(onDismiss: NiceDialogFragment<T>.() -> Unit) {
+    fun onDismiss(onDismiss: NiceDialogFragment<T>.() -> Unit): NiceDialogFragment<T> {
         val old = niceDialog.dismissListener
         niceDialog.dismissListener = {
             old.invoke(this)
             onDismiss(this)
         }
+        return this
+    }
+
+    fun onSaveInstanceState(saveInstanceState: NiceDialogFragment<T>.(Bundle) -> Unit): NiceDialogFragment<T> {
+        val old = niceDialog.onSaveInstanceStateListener
+        niceDialog.onSaveInstanceStateListener = {
+            old(it)
+            saveInstanceState(it)
+        }
+        return this
     }
 
 }
