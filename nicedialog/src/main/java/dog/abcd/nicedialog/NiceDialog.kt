@@ -86,6 +86,7 @@ open class NiceDialog<T : ViewBinding>(
      * 再注意⚠️：activity使用回调中等this去获取
      * @see NiceDialogFragment.getActivity
      */
+    @Transient
     var binder: (NiceDialogFragment<T>.() -> Unit) = {
         niceDialogFactory?.binder()?.invoke(this)
     }
@@ -93,10 +94,12 @@ open class NiceDialog<T : ViewBinding>(
     /**
      * dismiss回调，注意事项同上
      */
+    @Transient
     var dismissListener: (NiceDialogFragment<T>.() -> Unit) = {
         niceDialogFactory?.onDismiss()?.invoke(this)
     }
 
+    @Transient
     var onSaveInstanceStateListener: NiceDialogFragment<T>.(Bundle) -> Unit = {
         niceDialogFactory?.onSaveInstanceState()?.invoke(this, it)
     }

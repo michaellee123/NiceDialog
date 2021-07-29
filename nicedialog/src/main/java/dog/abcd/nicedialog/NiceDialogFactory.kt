@@ -2,15 +2,10 @@ package dog.abcd.nicedialog
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import androidx.viewbinding.ViewBinding
 import java.io.Serializable
-import java.lang.Exception
 import java.lang.reflect.ParameterizedType
 import java.lang.reflect.Type
-import kotlin.reflect.KClass
-import kotlin.reflect.KType
-import kotlin.reflect.typeOf
 
 /**
  * 对于需要多次用到的dialog，或者是内部业务稍微复杂的dialog，比如说列表选择，则继承此类进行封装
@@ -19,18 +14,19 @@ import kotlin.reflect.typeOf
  *
  * @author Michael Lee
  */
-abstract class NiceDialogFactory<T : ViewBinding, J, K>(
-    private val context: Context
-) : Serializable {
+abstract class NiceDialogFactory<T : ViewBinding, J, K>() :
+    Serializable {
 
     /**
      * 回调
      */
+    @Transient
     private var next: (NiceDialogFragment<T>.(J) -> Unit)? = null
 
     /**
      * 回调
      */
+    @Transient
     private var finish: (NiceDialogFragment<T>.(K) -> Unit)? = null
 
     /**
@@ -48,7 +44,7 @@ abstract class NiceDialogFactory<T : ViewBinding, J, K>(
      */
     fun onDismiss(): (NiceDialogFragment<T>) -> Unit = {}
 
-    fun onSaveInstanceState():NiceDialogFragment<T>.(Bundle)->Unit = {}
+    fun onSaveInstanceState(): NiceDialogFragment<T>.(Bundle) -> Unit = {}
 
     fun create(): NiceDialog<T> {
         return NiceDialog(getBindingRealType()!!, this)
@@ -105,5 +101,6 @@ abstract class NiceDialogFactory<T : ViewBinding, J, K>(
             result
         }
     }
+
 
 }

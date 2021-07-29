@@ -1,6 +1,5 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.github.dcendents.android-maven'
 group='com.github.michaellee123'
 
@@ -12,8 +11,8 @@ android {
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 6
-        versionName "1.2.2"
+        versionCode 7
+        versionName "1.2.4"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
@@ -52,7 +51,7 @@ publish {
     repoName = 'android'//Repository名
     groupId = 'dog.abcd'//包名（不要项目名）
     artifactId = 'nicedialog'//项目名称
-    publishVersion = '1.2.2'//版本号
+    publishVersion = '1.2.4'//版本号
     desc = 'A Very Nice Dialog For Android'//描述，不重要
     website = 'https://github.com/michaellee123/NiceDialog'//网站
 }

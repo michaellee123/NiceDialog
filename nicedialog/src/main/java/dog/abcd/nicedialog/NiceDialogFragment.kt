@@ -1,7 +1,9 @@
 package dog.abcd.nicedialog
 
 import android.graphics.drawable.ColorDrawable
+import android.os.BaseBundle
 import android.os.Bundle
+import android.util.ArrayMap
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View

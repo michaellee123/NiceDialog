@@ -23,13 +23,23 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README_zh.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_zh.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/dog/abcd/nicedialog/demo/AlertFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/dog/abcd/nicedialog/demo/AlertFactory.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/dog/abcd/nicedialog/demo/CircleDialogFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/dog/abcd/nicedialog/demo/CircleDialogFactory.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/dog/abcd/nicedialog/demo/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/dog/abcd/nicedialog/demo/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/dog/abcd/nicedialog/demo/TestDialogFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/dog/abcd/nicedialog/demo/TestDialogFactory.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nicedialog/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/nicedialog/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nicedialog/src/main/java/dog/abcd/nicedialog/NiceDialog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/nicedialog/src/main/java/dog/abcd/nicedialog/NiceDialog.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nicedialog/src/main/java/dog/abcd/nicedialog/NiceDialogFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/nicedialog/src/main/java/dog/abcd/nicedialog/NiceDialogFactory.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nicedialog/src/main/java/dog/abcd/nicedialog/NiceDialogFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/nicedialog/src/main/java/dog/abcd/nicedialog/NiceDialogFragment.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[SerialNumber@RKdrm]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[SerialNumber@R58M835CTAZ]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -371,7 +381,14 @@
       <option name="project" value="LOCAL" />
       <updated>1627465022432</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="1.add onSaveInstanceState callback&#10;2.fix onSaveInstanceState crash&#10;3.change NiceDialog.kt constructor">
+      <created>1627525313983</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1627525313983</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -451,39 +468,44 @@
     <state x="365" y="261" key="#PSD/1680.0.2048.1152/0.0.1680.1050@0.0.1680.1050" timestamp="1621822814370" />
     <state x="2217" y="294" key="#PSD/1680.0.2048.1152/0.0.1680.1050@1680.0.2048.1152" timestamp="1621825825498" />
     <state x="365" y="261" key="#PSD/1680.25.2048.1127/0.25.1680.949@0.25.1680.949" timestamp="1621824206030" />
-    <state x="2065" y="192" key="#com.intellij.ide.util.MemberChooser" timestamp="1627453159967">
+    <state x="2065" y="192" key="#com.intellij.ide.util.MemberChooser" timestamp="1627537296945">
       <screen x="1440" y="0" width="1680" height="945" />
     </state>
-    <state x="2065" y="192" key="#com.intellij.ide.util.MemberChooser/1440.0.1680.945/0.0.1440.900@1440.0.1680.945" timestamp="1627453159967" />
-    <state x="1795" y="49" key="CommitChangelistDialog2" timestamp="1627465022137">
-      <screen x="1440" y="0" width="1680" height="945" />
+    <state x="2065" y="192" key="#com.intellij.ide.util.MemberChooser/1440.0.1680.945/0.0.1440.900@1440.0.1680.945" timestamp="1627537296945" />
+    <state x="355" y="54" key="CommitChangelistDialog2" timestamp="1627525313711">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
+    <state x="355" y="54" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1627525313711" />
     <state x="1795" y="49" key="CommitChangelistDialog2/1440.0.1680.945/0.0.1440.900@1440.0.1680.945" timestamp="1627465022137" />
     <state x="2113" y="60" key="CommitChangelistDialog2/1680.0.2048.1152/0.0.1680.1050@1680.0.2048.1152" timestamp="1621826061099" />
-    <state width="549" height="640" key="DebuggerActiveHint" timestamp="1627460553765">
+    <state width="549" height="640" key="DebuggerActiveHint" timestamp="1627541232754">
       <screen x="1440" y="0" width="1680" height="945" />
     </state>
-    <state width="549" height="640" key="DebuggerActiveHint/1440.0.1680.945/0.0.1440.900@1440.0.1680.945" timestamp="1627460553765" />
+    <state width="549" height="640" key="DebuggerActiveHint/1440.0.1680.945/0.0.1440.900@1440.0.1680.945" timestamp="1627541232754" />
     <state x="564" y="331" key="FileChooserDialogImpl" timestamp="1621822978169">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="564" y="331" key="FileChooserDialogImpl/1680.0.2048.1152/0.0.1680.1050@0.0.1680.1050" timestamp="1621822978169" />
-    <state width="1638" height="151" key="GridCell.Tab.0.bottom" timestamp="1627522729552">
+    <state width="1638" height="350" key="GridCell.Tab.0.bottom" timestamp="1627541266485">
       <screen x="1440" y="0" width="1680" height="945" />
     </state>
-    <state width="1638" height="151" key="GridCell.Tab.0.bottom/1440.0.1680.945/0.0.1440.900@1440.0.1680.945" timestamp="1627522729552" />
-    <state width="1638" height="151" key="GridCell.Tab.0.center" timestamp="1627522729550">
+    <state width="1638" height="350" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1627526478082" />
+    <state width="1638" height="350" key="GridCell.Tab.0.bottom/1440.0.1680.945/0.0.1440.900@1440.0.1680.945" timestamp="1627541266485" />
+    <state width="1638" height="350" key="GridCell.Tab.0.center" timestamp="1627541266482">
       <screen x="1440" y="0" width="1680" height="945" />
     </state>
-    <state width="1638" height="151" key="GridCell.Tab.0.center/1440.0.1680.945/0.0.1440.900@1440.0.1680.945" timestamp="1627522729550" />
-    <state width="1638" height="151" key="GridCell.Tab.0.left" timestamp="1627522729548">
+    <state width="1638" height="350" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1627526478081" />
+    <state width="1638" height="350" key="GridCell.Tab.0.center/1440.0.1680.945/0.0.1440.900@1440.0.1680.945" timestamp="1627541266482" />
+    <state width="1638" height="350" key="GridCell.Tab.0.left" timestamp="1627541266481">
       <screen x="1440" y="0" width="1680" height="945" />
     </state>
-    <state width="1638" height="151" key="GridCell.Tab.0.left/1440.0.1680.945/0.0.1440.900@1440.0.1680.945" timestamp="1627522729548" />
-    <state width="1638" height="151" key="GridCell.Tab.0.right" timestamp="1627522729551">
+    <state width="1638" height="350" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1627526478080" />
+    <state width="1638" height="350" key="GridCell.Tab.0.left/1440.0.1680.945/0.0.1440.900@1440.0.1680.945" timestamp="1627541266481" />
+    <state width="1638" height="350" key="GridCell.Tab.0.right" timestamp="1627541266484">
       <screen x="1440" y="0" width="1680" height="945" />
     </state>
-    <state width="1638" height="151" key="GridCell.Tab.0.right/1440.0.1680.945/0.0.1440.900@1440.0.1680.945" timestamp="1627522729551" />
+    <state width="1638" height="350" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1627526478081" />
+    <state width="1638" height="350" key="GridCell.Tab.0.right/1440.0.1680.945/0.0.1440.900@1440.0.1680.945" timestamp="1627541266484" />
     <state x="2404" y="253" key="RollbackChangesDialog" timestamp="1621824433290">
       <screen x="1680" y="0" width="2048" height="1152" />
     </state>
@@ -499,9 +521,10 @@
       <screen x="1440" y="0" width="1680" height="945" />
     </state>
     <state x="2010" y="222" width="540" height="524" key="StructurePopup/1440.0.1680.945/0.0.1440.900@1440.0.1680.945" timestamp="1627460787844" />
-    <state x="1880" y="235" key="Vcs.Push.Dialog.v2" timestamp="1627465029609">
-      <screen x="1440" y="0" width="1680" height="945" />
+    <state x="440" y="261" key="Vcs.Push.Dialog.v2" timestamp="1627525521843">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
+    <state x="440" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1627525521843" />
     <state x="1880" y="235" key="Vcs.Push.Dialog.v2/1440.0.1680.945/0.0.1440.900@1440.0.1680.945" timestamp="1627465029609" />
     <state x="2216" y="287" key="Vcs.Push.Dialog.v2/1680.0.2048.1152/0.0.1680.1050@1680.0.2048.1152" timestamp="1621826100889" />
     <state x="1795" y="91" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1627464963398">
@@ -516,9 +539,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="467" y="308" width="628" height="529" key="org.intellij.images.editor.actions.BackgroundImageDialog/1680.0.2048.1152/0.0.1680.1050@0.0.1680.1050" timestamp="1621823004406" />
-    <state x="1945" y="207" width="670" height="676" key="search.everywhere.popup" timestamp="1627522879695">
-      <screen x="1440" y="0" width="1680" height="945" />
+    <state x="505" y="230" width="670" height="752" key="search.everywhere.popup" timestamp="1627525164755">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
+    <state x="505" y="230" width="670" height="752" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1627525164755" />
     <state x="1945" y="207" width="670" height="676" key="search.everywhere.popup/1440.0.1680.945/0.0.1440.900@1440.0.1680.945" timestamp="1627522879695" />
   </component>
   <component name="XDebuggerManager">

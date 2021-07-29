@@ -10,7 +10,7 @@ repositories {
     maven { url 'https://jitpack.io' }
 }
 //...
-implementation 'com.github.michaellee123:NiceDialog:1.2.2'
+implementation 'com.github.michaellee123:NiceDialog:1.2.4'
 ```
 
 ## 简单使用
