@@ -36,6 +36,7 @@ abstract class NiceDialogFactory<T : ViewBinding, J, K>(
     /**
      * 在show之后此对象会创建，即config或binder回调后会创建
      */
+    @Transient
     lateinit var dialog: NiceDialogFragment<T>
 
     abstract fun config(): NiceDialogConfig.() -> Unit
