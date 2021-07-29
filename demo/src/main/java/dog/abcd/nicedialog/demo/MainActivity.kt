@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnSimple.setOnClickListener {
-            AlertFactory().create().bind {
+            AlertFactory(this).create().bind {
                 //旋转屏幕为横向时，可以撑满全屏
                 immersionBar {
                     fitsSystemWindows(false)

@@ -14,7 +14,7 @@ import java.lang.reflect.Type
  *
  * @author Michael Lee
  */
-abstract class NiceDialogFactory<T : ViewBinding, J, K>() :
+abstract class NiceDialogFactory<T : ViewBinding, J, K>(@Transient val context: Context) :
     Serializable {
 
     /**
