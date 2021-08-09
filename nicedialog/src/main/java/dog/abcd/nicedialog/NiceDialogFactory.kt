@@ -85,9 +85,15 @@ abstract class NiceDialogFactory<T : ViewBinding, J, K>(@Transient val context: 
         val pt = genericSuperclass as ParameterizedType
         var clazz: Class<T>? = null
         for (type in pt.actualTypeArguments) {
-            val cls = type as Class<T>
-            if (interfaceContainsViewBinding(cls)) {
-                clazz = cls
+            if (type is Class<*>) {
+                try {
+                    val cls = type as Class<T>
+                    if (interfaceContainsViewBinding(cls)) {
+                        clazz = cls
+                    }
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
             }
         }
         return clazz
