@@ -1,4 +1,7 @@
 # NiceDialog
+
+[![last-release](https://jitpack.io/v/michaellee123/NiceDialog.svg)](https://jitpack.io/#michaellee123/NiceDialog)
+
 A Very Nice Dialog For Android Developer.
 
 ## 导入
@@ -10,7 +13,8 @@ repositories {
     maven { url 'https://jitpack.io' }
 }
 //...
-implementation 'com.github.michaellee123:NiceDialog:1.3.1'
+implementation 'com.github.michaellee123:NiceDialog:last-release' 
+//last-release看文档顶部的jitpack徽章
 ```
 
 ## 简单使用

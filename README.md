@@ -1,4 +1,7 @@
-# NiceDialog   [简体中文](README_zh.md)
+# NiceDialog   [简体中文](README_zh.md) 
+
+[![last-release](https://jitpack.io/v/michaellee123/NiceDialog.svg)](https://jitpack.io/#michaellee123/NiceDialog)
+
 A Very Nice Dialog For Android Developer.
 
 ## Import
@@ -10,7 +13,8 @@ repositories {
     maven { url 'https://jitpack.io' }
 }
 //something else...
-implementation 'com.github.michaellee123:NiceDialog:1.3.1'
+implementation 'com.github.michaellee123:NiceDialog:last-release' 
+//last-release see jitpack's badge, it's top of this doc
 ```
 
 ## Simple Usage

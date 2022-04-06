@@ -18,13 +18,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1cf6a009-5981-4514-a3e0-91dfd19df9e9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nicedialog/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/nicedialog/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nicedialog/src/main/java/dog/abcd/nicedialog/NiceDialogFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/nicedialog/src/main/java/dog/abcd/nicedialog/NiceDialogFactory.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -415,7 +410,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628481104661</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="1.fix factory function not open😅">
+      <created>1649224891576</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1649224891576</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -487,7 +489,8 @@
     <MESSAGE value="1、基于ViewBinding，适用性更广。" />
     <MESSAGE value="1.add onSaveInstanceState callback&#10;2.fix onSaveInstanceState crash&#10;3.change NiceDialog.kt constructor" />
     <MESSAGE value="1.fix factory class cast" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.fix factory class cast" />
+    <MESSAGE value="1.fix factory function not open" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.fix factory function not open" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
