@@ -42,9 +42,9 @@ abstract class NiceDialogFactory<T : ViewBinding, J, K>(@Transient val context: 
     /**
      * 只会回调一次
      */
-    fun onDismiss(): (NiceDialogFragment<T>) -> Unit = {}
+    open fun onDismiss(): (NiceDialogFragment<T>) -> Unit = {}
 
-    fun onSaveInstanceState(): NiceDialogFragment<T>.(Bundle) -> Unit = {}
+    open fun onSaveInstanceState(): NiceDialogFragment<T>.(Bundle) -> Unit = {}
 
     fun create(): NiceDialog<T> {
         return NiceDialog(getBindingRealType()!!, this)
