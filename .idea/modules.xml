@@ -4,7 +4,13 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/NiceDialog.iml" filepath="$PROJECT_DIR$/NiceDialog.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/demo/NiceDialog.demo.iml" filepath="$PROJECT_DIR$/.idea/modules/demo/NiceDialog.demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/demo/NiceDialog.demo.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/demo/NiceDialog.demo.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/demo/NiceDialog.demo.main.iml" filepath="$PROJECT_DIR$/.idea/modules/demo/NiceDialog.demo.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/demo/NiceDialog.demo.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/demo/NiceDialog.demo.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/nicedialog/NiceDialog.nicedialog.iml" filepath="$PROJECT_DIR$/.idea/modules/nicedialog/NiceDialog.nicedialog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nicedialog/NiceDialog.nicedialog.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/nicedialog/NiceDialog.nicedialog.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nicedialog/NiceDialog.nicedialog.main.iml" filepath="$PROJECT_DIR$/.idea/modules/nicedialog/NiceDialog.nicedialog.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nicedialog/NiceDialog.nicedialog.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/nicedialog/NiceDialog.nicedialog.unitTest.iml" />
     </modules>
   </component>
 </project>
