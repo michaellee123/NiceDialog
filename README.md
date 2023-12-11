@@ -244,3 +244,6 @@ immersionBar {
 ## Use ViewBinding and DataBinding together
 
 First of all, if your Android Studio is 4.2 version or higher, you should know , openJDK11 will install with Android Studio, it's not about your gradle setting, so if you use DataBinding broke by some exception, you should check the JDK version first. 'Cause DataBinding only work in JDK 1.8. PS: do not believe terminal 'java -version', only the project structure jdk location's version is right.
+
+
+[<img src="https://storage.ko-fi.com/cdn/generated/zfskfgqnf/rest-44b9f406d764e57b710bffe31a346b33-tcf2mnas.jpg#avatar" width="38.2%;">](https://ko-fi.com/michaellee123)
